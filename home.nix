@@ -71,7 +71,10 @@
     # EDITOR = "emacs";
   };
   programs.bash.enable = true;
-
+  programs.bash.shellAliases = {
+    fswitch-home-manager = "home-manager switch --flake ~/dotfiles/";
+    fswitch-nixos = "sudo nixos-rebuild switch --flake ~/dotfiles/";
+  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
