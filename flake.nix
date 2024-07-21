@@ -19,7 +19,7 @@
         nixos = nix_lib.nixosSystem {
 	      inherit system;
 	      specialArgs = {inherit inputs outputs;};
-   	    modules = [ ./configuration.nix ];	
+   	      modules = [ ./configuration.nix ];	
       };
     };
     homeConfigurations = {
