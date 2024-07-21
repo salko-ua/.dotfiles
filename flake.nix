@@ -7,22 +7,25 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager }: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:  
     let
       nix_lib = nixpkgs.lib;
       home_lib = home-manager.lib;
       system = "x86_64-linux";	
       pkgs = nixpkgs.legacyPackages.${system};
+      outputs = self.outputs;
     in  {
     nixosConfigurations = {
-      nixos = nix_lib.nixosSystem {
-	inherit system;
-	modules = [ ./configuration.nix ];	
+        nixos = nix_lib.nixosSystem {
+	      inherit system;
+	      specialArgs = {inherit inputs outputs;};
+   	    modules = [ ./configuration.nix ];	
       };
     };
     homeConfigurations = {
-      salo = home_lib.homeManagerConfiguration {
-	inherit pkgs;
+        salo = home_lib.homeManagerConfiguration {
+	      inherit pkgs;
+	      extraSpecialArgs = {inherit inputs outputs;};
         modules = [ ./home.nix ];
       };
     };
