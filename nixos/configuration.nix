@@ -7,6 +7,8 @@
   ...
 }: {
   imports = [
+    outputs.nixosModules.steam
+    outputs.nixosModules.gnome
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 

@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    outputs.homemanagerModules.git
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
