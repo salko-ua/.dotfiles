@@ -21,7 +21,18 @@
     ./hardware-configuration.nix
   ];
 
-  nixpkgs = {
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.useOSProber = true;
+  
+  #environment.systemPackages = with pkgs; [
+  #  git
+  #  home-manager
+  #  neovim
+  #];
+
+  nixpkgs = { 
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
@@ -71,11 +82,11 @@
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
-    your-username = {
+    salo = {
       # TODO: You can set an initial password for your user.
       # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
       # Be sure to change it (using passwd) after rebooting!
-      initialPassword = "1234";
+      initialPassword = "sa lo";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZfIIW2IMUMHb4stmtyxZeBTtk6jjrl62GpP5Gkvjsf"
