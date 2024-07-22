@@ -1,14 +1,7 @@
 {
   services.xserver = {
     enable = true;
-    displayManager = {
-      gdm = {
-        enable = true;
-	wayland = false;
-	banner = "HELLO BUDDY";
-	autoSuspend = false;
-      };
-    };
+    displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
 }
