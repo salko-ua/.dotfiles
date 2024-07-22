@@ -10,26 +10,16 @@
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
+    gedit
   ]) ++ (with pkgs.gnome; [
     cheese # webcam tool
     gnome-music
     gnome-terminal
-    gedit # text editor
     epiphany # web browser
     evince # document viewer
     gnome-characters
     totem # video player
   ]);
-  home-manager.users.salo = {
-    dconf = {
-      enable = true;
-      settings."org/gnome/shell" = {
-        disable-user-extensions = false;
-        enabled-extensions = with pkgs.gnomeExtensions; [
-          blur-my-shell.extensionUuid
-        ];
-      };
-      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    };
-  };
+
+  programs.dconf.enable = true;
 }

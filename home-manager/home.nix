@@ -7,7 +7,8 @@
   ...
 }: {
   imports = [
-    outputs.homemanagerModules.git
+    outputs.homeManagerModules.git 
+    outputs.homeManagerModules.gnome
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
@@ -51,7 +52,9 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.neovim.enable = true;
-  
+  programs.bash.shellAliases = {
+    nix-update = "git add . && nix flake update && sudo nixos-rebuild switch --flake . && home-manager switch --flake .";
+  };  
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
