@@ -52,9 +52,10 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.neovim.enable = true;
-  programs.bash.shellAliases = {
-    nix-update = "git add . && nix flake update && sudo nixos-rebuild switch --flake . && home-manager switch --flake .";
-  };  
+  programs.bash.enable = true;
+  programs.bash.shellAliases = {    
+    update = "cd ~/.dotfiles/ && git add . && nix flake update && sudo nixos-rebuild switch --flake . && home-manager switch --flake .";
+  };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
