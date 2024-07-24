@@ -7,19 +7,13 @@
   ...
 }: {
   imports = [
+    # modules/nixos import
     outputs.nixosModules.steam
     outputs.nixosModules.gnome
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
+    
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
 
@@ -30,7 +24,6 @@
 
   nixpkgs = { 
     overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
@@ -50,21 +43,14 @@
     };
     channel.enable = false;
 
-    # Opinionated: make flake registry and nix path match flake inputs
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  # FIXME: Add the rest of your current configuration
-
   networking.hostName = "nixos";
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     salo = {
-      # TODO: You can set an initial password for your user.
-      # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
-      # Be sure to change it (using passwd) after rebooting!
       initialPassword = "sa lo";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
