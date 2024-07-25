@@ -8,16 +8,17 @@
 }: {
   imports = [
     # modules from  modules/home-manager):
-    outputs.homeManagerModules.git 
-    outputs.homeManagerModules.gnome
-    
+    # outputs.homeManagerModules.git 
+        
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
     # You can also split up your configuration and import pieces of it here:
     ./pkgs.nix
-    ./fish.nix
-    ./alacritty.nix
+    ./terminal/fish.nix
+    ./terminal/alacritty.nix
+    ./gnome/gnome.nix
+    ./git/git.nix
   ];
 
   nixpkgs = {
