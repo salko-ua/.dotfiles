@@ -8,12 +8,13 @@
 }: {
   imports = [
     # modules/nixos import
-    outputs.nixosModules.steam
-    outputs.nixosModules.gnome
+    # outputs.nixosModules.moduleName
+    
     
     # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
-
+    ./configurations/steam/steam.nix
+    ./configurations/gnome/gnome.nix
+    ./configurations/users/users.nix
     ./hardware-configuration.nix
   ];
 
