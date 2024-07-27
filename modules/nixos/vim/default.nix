@@ -1,3 +1,0 @@
-{
-  programs.vim.enable = true;
-}

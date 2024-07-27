@@ -9,12 +9,11 @@
   imports = [
     # modules/nixos import
     # outputs.nixosModules.moduleName
-    
-    
+
     # You can also split up your configuration and import pieces of it here:
     ./configurations/steam/steam.nix
-    ./configurations/gnome/gnome.nix
-    ./configurations/users/users.nix
+    ./configurations/KDE6/kde6.nix
+    # ./configurations/gnome/gnome.nix
     ./hardware-configuration.nix
   ];
 
@@ -23,7 +22,7 @@
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
 
-  nixpkgs = { 
+  nixpkgs = {
     overlays = [
       outputs.overlays.additions
       outputs.overlays.modifications
@@ -55,7 +54,7 @@
       initialPassword = "sa lo";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZfIIW2IMUMHb4stmtyxZeBTtk6jjrl62GpP5Gkvjsf"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZfIIW2IMUMHb4stmtyxZeBTtk6jjrl62GpP5Gkvjsf"
       ];
       extraGroups = ["wheel"];
     };

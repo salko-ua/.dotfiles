@@ -8,8 +8,8 @@
 }: {
   imports = [
     # modules from  modules/home-manager):
-    # outputs.homeManagerModules.git 
-        
+    # outputs.homeManagerModules.git
+
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
@@ -17,7 +17,6 @@
     ./pkgs.nix
     ./terminal/fish.nix
     ./terminal/alacritty.nix
-    ./gnome/gnome.nix
     ./git/git.nix
   ];
 
@@ -26,8 +25,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-
-      ];
+    ];
     config = {
       allowUnfree = true;
     };
