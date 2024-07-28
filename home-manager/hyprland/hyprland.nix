@@ -6,9 +6,16 @@
     xwayland.enable = true;
     systemd.enable = true;
   };
+  
+  # theme
 
-  catppuccin.flavor = "mocha";
-  catppuccin.enable = true;
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    pointerCursor.enable = true;
+
+  };
+  
 
   programs = {
       waybar.enable = true;
