@@ -13,6 +13,7 @@
     # You can also split up your configuration and import pieces of it here:
     ./configurations/gui/gui.nix
     ./configurations/hyprland/hyprland.nix
+    ./configurations/theme/theme.nix
     ./configurations/steam/steam.nix
     ./configurations/nvidia/nvidia.nix
     ./hardware-configuration.nix

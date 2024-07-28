@@ -7,16 +7,6 @@
     systemd.enable = true;
   };
   
-  # theme
-
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    pointerCursor.enable = true;
-
-  };
-  
-
   programs = {
       waybar.enable = true;
       rofi = {
