@@ -8,18 +8,15 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
+    
+    # theme
+    catppuccin.url = "github:catppuccin/nix";
   };
   outputs = inputs@ {
     self,
     nixpkgs,
     home-manager,
-    plasma-manager,
+    catppuccin,
     ...
   }: 
   let
@@ -41,6 +38,7 @@
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
+	  catppuccin.nixosModules.catppuccin
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
         ];
@@ -53,11 +51,9 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-	  # plasma-manager 
-	  inputs.plasma-manager.homeManagerModules.plasma-manager
-          # > Our main home-manager configuration file <
+	  catppuccin.homeManagerModules.catppuccin
+	  # > Our main home-manager configuration file <
           ./home-manager/home.nix
-        
 	  {
 	    home = {
 	      inherit username;
