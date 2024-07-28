@@ -15,6 +15,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     ./pkgs.nix
+    ./hyprland/hyprland.nix
     ./terminal/fish.nix
     ./terminal/alacritty.nix
     ./git/git.nix

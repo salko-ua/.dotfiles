@@ -1,1 +1,0 @@
-nix run github:nix-community/plasma-manager --extra-experimental-features nix-command --extra-experimental-features flakes

@@ -11,16 +11,16 @@
     # outputs.nixosModules.moduleName
 
     # You can also split up your configuration and import pieces of it here:
+    ./configurations/gui/gui.nix
+    ./configurations/hyprland/hyprland.nix
     ./configurations/steam/steam.nix
-    ./configurations/KDE6/kde6.nix
-    # ./configurations/gnome/gnome.nix
+    ./configurations/nvidia/nvidia.nix
     ./hardware-configuration.nix
   ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   nixpkgs = {
     overlays = [
@@ -59,7 +59,7 @@
       extraGroups = ["wheel"];
     };
   };
-
+  
   services.openssh = {
     enable = true;
     settings = {
