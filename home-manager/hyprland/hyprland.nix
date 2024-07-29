@@ -49,11 +49,9 @@
     ];
 
     exec-once = [
-      "[workspace 1 silent] alacritty"
-      "[workspace 2 silent] steam"
-      "[workspace 3 silent] firefox" 
-      "[workspace 4 silent] vesktop" 
-      "[workspace 5 silent] telegram-desktop" 
+      "[workspace 1 ] ./hello.sh"
+      
+      "[workspace 3 ] firefox"  
     ];
 
     general = {
