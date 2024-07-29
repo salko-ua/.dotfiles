@@ -1,0 +1,203 @@
+[33mcommit 449f72d1690de6733002a92441025adc5f976f02[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 29 00:15:17 2024 +0000
+
+    switch to mocha theme and set location
+
+[33mcommit ea90e5fdd89ca25eb77022cb1a1b06a170e5fb95[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Sun Jul 28 22:35:58 2024 +0000
+
+    add global catppuccin
+
+[33mcommit 50004b2e6bf64b72afe27d4588120d5a764ce5b9[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Sun Jul 28 22:20:19 2024 +0000
+
+    catppuccin add cursor
+
+[33mcommit de99a5aa9beddfc069632d03d6babd3d1e011672[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Sun Jul 28 22:17:12 2024 +0000
+
+    catppuccin mocha theme enable
+
+[33mcommit bd591c749ae216ff521bcc4f54161b9721deff0f[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Sun Jul 28 20:04:19 2024 +0000
+
+    switch to hyprland and add nvidia drivers
+
+[33mcommit 74e72a0176514e698d29ff4c112e28ad0e0065c4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Sat Jul 27 12:27:47 2024 +0000
+
+    delete all DE
+
+[33mcommit 9c1415156fa341d8834da1828cec19dfe08735f9[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Thu Jul 25 13:08:30 2024 +0000
+
+    restructure configs nixos
+
+[33mcommit eaae210e01d6aa7dfeb86a2d7c4958c5fd198264[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Thu Jul 25 12:55:01 2024 +0000
+
+    restructure configs and finally add alacritty and fish in him
+
+[33mcommit 7cc51c68a550fda353326d5da741861b29ef89de[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Wed Jul 24 23:54:04 2024 +0000
+
+    add alacritty and fish
+
+[33mcommit 749cca64784fa3d06b03a528cc38bc3d72858ec9[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Wed Jul 24 20:24:48 2024 +0000
+
+    ...
+
+[33mcommit 8846377da7cd571906e9e86e576272291943520f[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Tue Jul 23 12:16:29 2024 +0000
+
+    ..
+
+[33mcommit 386293f60dbdc8070ce75ee61520c291fe528eac[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 18:46:29 2024 +0000
+
+    add aliases
+
+[33mcommit aaf6a355a1241d1c767dc9fb448af18043e3a9b7[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 18:28:45 2024 +0000
+
+    add bash alias
+
+[33mcommit de537ac51be9a1bdc92bc2060089c8957d2a2d39[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 18:03:55 2024 +0000
+
+    add gnome exstensions and dconf 2
+
+[33mcommit c4052b4e9d42d9219b36f6ce2911a104a135159e[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 18:02:41 2024 +0000
+
+    add gnome exstensions and dconf
+
+[33mcommit eb7e474cefc25157ac54c86cb58228f73f5e9a18[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 17:29:25 2024 +0000
+
+    fuck
+
+[33mcommit 781b58b8c7b57bc0f5f5ecee34df65f2a125c036[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 17:20:15 2024 +0000
+
+    gnome
+
+[33mcommit 85c235776e0948c7cd08adbd3f5127698f8c8867[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 17:17:33 2024 +0000
+
+    gnome
+
+[33mcommit faf687afe6fc9636a2fb2397b93d4b6bea299d0b[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 17:13:15 2024 +0000
+
+    turn on gnome
+
+[33mcommit 5c2fc27637d02b1f77783657b0354aa24b0667e9[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 17:04:42 2024 +0000
+
+    change gnome config
+
+[33mcommit 6d00c7dcf4ec02b832620268848726f1adf08ae9[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 16:58:01 2024 +0000
+
+    add gnome steam
+
+[33mcommit a67ddb5c7056457e1cf54a4c6ddf57bb625f1437[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 14:28:51 2024 +0000
+
+    fix /boot
+
+[33mcommit 1a5bc20a141165c5abe97aaca748cd4771fc3ce0[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Mon Jul 22 12:07:41 2024 +0000
+
+    fix /boot
+
+[33mcommit af1dd4493825988a5cf9c111c0d4be53f54fa690[m
+Author: SALO <125147422+salko-ua@users.noreply.github.com>
+Date:   Sun Jul 21 23:06:21 2024 +0300
+
+    copy .gitignore from PerchunPak
+
+[33mcommit ef74c43fbed29d80934dd2a810684756bfb99c33[m
+Author: SALO <125147422+salko-ua@users.noreply.github.com>
+Date:   Sun Jul 21 23:05:21 2024 +0300
+
+    Create README.md
+
+[33mcommit 52d984f836eda2a0368c61c24284a7bf2a69d0ff[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Sun Jul 21 22:14:07 2024 +0300
+
+    switch to standard template
+
+[33mcommit 27d7558ab8ae6b06d56438e90177d77bf70c980b[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Sun Jul 21 18:19:06 2024 +0300
+
+    finish change DE
+
+[33mcommit cfe8038610c35f709720aa0d6730906b6bfb037f[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Sun Jul 21 18:06:14 2024 +0300
+
+    switch to gnome
+
+[33mcommit d6eaecca7bcc2b93b8979a666fd9315642c4d223[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Thu Jul 18 21:54:18 2024 +0300
+
+    add aliases
+
+[33mcommit c4f8845dd8c166b0a6c8482ffa5d65855cfa49ef[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Thu Jul 18 21:46:13 2024 +0300
+
+    add neovim
+
+[33mcommit 5bad86b6b1ee9ca62d85b67c42439ece29057262[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Thu Jul 18 21:27:30 2024 +0300
+
+    add home-manager
+
+[33mcommit ffc1642c390009175802956490daeb3bbb6c966b[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Thu Jul 18 18:00:48 2024 +0300
+
+    add experimental-features
+
+[33mcommit dde4c4c4ae97f0f8bcff5c7f6eb207bfbba2bc20[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Thu Jul 18 17:48:05 2024 +0300
+
+    add flake
+
+[33mcommit 313646183a14dcdb88574c8ffd75a5a8925c11d6[m
+Author: salko-ua <chips69jamil69game@gmail.com>
+Date:   Thu Jul 18 17:23:42 2024 +0300
+
+    init

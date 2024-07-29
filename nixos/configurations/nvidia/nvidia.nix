@@ -36,6 +36,6 @@
     # accessible via `nvidia-settings`.
     nvidiaSettings = false;
 
-    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 }
