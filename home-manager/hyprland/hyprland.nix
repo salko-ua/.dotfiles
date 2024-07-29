@@ -22,9 +22,29 @@
     };
 
   wayland.windowManager.hyprland.settings = {
+    general = {
+      no_border_on_floating = true;
+      gaps_in = 5;
+      gaps_out = 10;
+      "col.inactive_border" = "rgb(7987a1)";
+      "col.active_border" = "rgb(9697e8)";
+      resize_on_border = true;
+      hover_icon_on_border = true;
+    };
+    
     decoration = {
-      shadow_offset = "0 5";
-      "col.shadow" = "rgba(00000099)";
+      rounding = 20;
+      active_opacity = 1;
+      inactive_opacity = 0.8;
+      fullscreen_opacity = 1;
+      drop_shadow = true;
+      shadow_range = 10;
+      "col.shadow" = "rgb(060606)";
+      blur = {
+        enabled = true;
+	size = 2;
+	new_optimizations = true;
+      };
     };
 
     input = {
@@ -32,6 +52,18 @@
       kb_layout = "us, ua";
       kb_options=grp:alt_shift_toggle;
     };
+    
+    windowrule = [
+      "float,^(Rofi)$"
+      "center 1,^(Rofi)$"
+      "pin,^(Rofi)$"
+      "stayfocused,^(Rofi)$"
+    ];
+
+    windowrulev2 = [
+      "forcergbx, class:firefox"
+      "suppressevent maximize, class:.*"
+    ];
 
     monitor = "eDP-1, 2560x1440@165, 0x0, 1.600000";    
 
@@ -72,12 +104,6 @@
       # Move / resize windows
       "$mod, mouse:272, movewindow"
       "$mod, mouse:273, resizewindow"
-    ];
-
-    windowrule = [
-      "float,^(Rofi)$"
-      "center 1,^(Rofi)$"
-      "pin,^(Rofi)$"
     ];
   };
 }
