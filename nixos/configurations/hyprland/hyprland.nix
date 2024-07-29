@@ -15,11 +15,12 @@
     systemPackages = [
       pkgs.home-manager
       pkgs.vesktop
-      pkgs.gnome.nautilus
+      pkgs.discord
+      pkgs.nautilus
       pkgs.telegram-desktop
       
-      pkgs.lshw
-
+      pkgs.swaybg
+      pkgs.pavucontrol
       pkgs.waybar
       pkgs.eww
       pkgs.dunst
@@ -33,9 +34,6 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-
-
-  sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -46,13 +44,9 @@
   };
 
   hardware = {
-    opengl.enable = true;
-
     # MOST WAYLAND COMPOSITORS NEED THIS
     nvidia.modesetting.enable = true;
   };
-
-
 
 }
 

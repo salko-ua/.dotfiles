@@ -8,20 +8,72 @@
   };
   
   programs = {
-      waybar.enable = true;
-      rofi = {
-        enable = true;
-        package = pkgs.rofi-wayland;
-	extraConfig = {
-          modes = "drun";
-          show-icons = true;
-        };
+    rofi = {
+      enable = true;
+      package = pkgs.rofi-wayland;
+      extraConfig = {
+        modes = "drun";
+        show-icons = true;
       };
-      hyprlock.enable = true;
-      wlogout.enable = true;
     };
+    hyprlock.enable = true;
+    wlogout.enable = true;
+  };
 
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+    settings = {
+      mainBar = {
+      	layer = "top";
+      	position = "top";
+      	height = 50;
+      	modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
+        modules-center = [ "sway/window" "custom/hello-from-waybar" ];
+        modules-right = [ "mpd" "custom/mymodule#with-css-id" "temperature" ];
+      	"sway/workspaces" = {
+          disable-scroll = true;
+          all-outputs = true;
+        };
+       "custom/hello-from-waybar" = {
+          format = "hello {}";
+          max-length = 40;
+          interval = "once";
+          exec = pkgs.writeShellScript "hello-from-waybar" ''echo "from within waybar"'';
+       };
+      };
+    };
+    style = ''
+  	* {
+    	border: none;
+    	border-radius: 0;
+    	font-family: Source Code Pro;
+  	}
+  	window#waybar {
+    	background: #16191C;
+    	color: #AAB2BF;
+  	}
+  	#workspaces button {
+    	padding: 0 5px;
+  	}
+    '';
+  };
+ 
   wayland.windowManager.hyprland.settings = {
+    env = [
+      # Nvidia
+      "LIBVA_DRIVER_NAME,nvidia"
+      "XDG_SESSION_TYPE,wayland"
+      "GBM_BACKEND,nvidia-drm"
+      "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+    ];
+
+    exec-once = [
+      "swaybg &"
+      "waybar &"
+      "[workspace special:magic ilent] firefox"
+    ];
+
     general = {
       no_border_on_floating = true;
       gaps_in = 5;
@@ -63,6 +115,9 @@
     windowrulev2 = [
       "forcergbx, class:firefox"
       "suppressevent maximize, class:.*"
+      "float,class:(steam),title:(Friends List)"
+      "center,class:(steam),title:(Friends List)"
+      "workspace 4,class:(steam),title:(Friends List)"
     ];
 
     monitor = "eDP-1, 2560x1440@165, 0x0, 1.600000";    
