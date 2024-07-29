@@ -14,8 +14,7 @@
       }
     ];
     shellAliases = {
-      nupdate = "sudo nixos-rebuild switch --flake .";
-      hupdate = "home-manager switch --flake .";
+      update = "sudo nixos-rebuild switch --flake . && home-manager switch --flake .";
     };
   };
 }

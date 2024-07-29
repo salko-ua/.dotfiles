@@ -36,6 +36,14 @@ in
     theme = "tela";
     footer = true;
   };
+  
+
+  fonts = {
+    packages = with pkgs; [
+      meslo-lgs-nf
+      fantasque-sans-mono
+    ];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Kyiv";

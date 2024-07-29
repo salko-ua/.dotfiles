@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -22,41 +22,21 @@
 
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
-    settings = {
-      mainBar = {
-      	layer = "top";
-      	position = "top";
-      	height = 50;
-      	modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
-        modules-center = [ "sway/window" "custom/hello-from-waybar" ];
-        modules-right = [ "mpd" "custom/mymodule#with-css-id" "temperature" ];
-      	"sway/workspaces" = {
-          disable-scroll = true;
-          all-outputs = true;
+    settings.mainBar = lib.mkMerge [
+      (builtins.fromJSON (builtins.readFile ./config.json))
+      {
+        "hyprland/language" = {
+          on-scroll-up = pkgs.writeShellScript "switch-layout-next" ''
+            hyprctl devices -j | jq '.keyboards[] | select(.main).name' | xargs -I % hyprctl switchxkblayout % prev
+          '';
+          on-scroll-down = pkgs.writeShellScript "switch-layout-prev" ''
+            hyprctl devices -j | jq '.keyboards[] | select(.main).name' | xargs -I % hyprctl switchxkblayout % next
+          '';
         };
-       "custom/hello-from-waybar" = {
-          format = "hello {}";
-          max-length = 40;
-          interval = "once";
-          exec = pkgs.writeShellScript "hello-from-waybar" ''echo "from within waybar"'';
-       };
-      };
-    };
-    style = ''
-  	* {
-    	border: none;
-    	border-radius: 0;
-    	font-family: Source Code Pro;
-  	}
-  	window#waybar {
-    	background: #16191C;
-    	color: #AAB2BF;
-  	}
-  	#workspaces button {
-    	padding: 0 5px;
-  	}
-    '';
+      }
+    ];
+    style = builtins.readFile ./style.css;
+    systemd.enable = true;
   };
  
   wayland.windowManager.hyprland.settings = {
@@ -69,9 +49,11 @@
     ];
 
     exec-once = [
-      "swaybg &"
-      "waybar &"
-      "[workspace special:magic ilent] firefox"
+      "[workspace 1 silent] alacritty"
+      "[workspace 2 silent] steam"
+      "[workspace 3 silent] firefox" 
+      "[workspace 4 silent] vesktop" 
+      "[workspace 5 silent] telegram-desktop" 
     ];
 
     general = {
@@ -115,8 +97,14 @@
     windowrulev2 = [
       "forcergbx, class:firefox"
       "suppressevent maximize, class:.*"
+
       "float,class:(steam),title:(Friends List)"
       "center,class:(steam),title:(Friends List)"
+      
+
+      "float,class:(pavucontrol),titile:(pavucontrol)"
+      "center,class:(pavucontrol),titile:(pavucontrol)"
+
       "workspace 4,class:(steam),title:(Friends List)"
     ];
 
@@ -143,15 +131,17 @@
       # Workspace movement
       "$mod, Q, workspace, e-1"
       "$mod, E, workspace, e+1"
-      "$mod, S, togglespecialworkspace, magic"
+      "ALT CTRL, Z, workspace, 3"
+      "ALT CTRL, X, workspace, 4"
+      "ALT CTRL, С, workspace, 5"
 
       # Move window to workspace [1-10 and Special]
-      "$mod SHIFT, 1, movetoworkspace, 5"
-      "$mod SHIFT, 2, movetoworkspace, 6"
-      "$mod SHIFT, 3, movetoworkspace, 7"
-      "$mod SHIFT, 4, movetoworkspace, 8"
-      "$mod SHIFT, 5, movetoworkspace, 9"
-      "$mod SHIFT, S, movetoworkspace, special:magic"
+      "$mod SHIFT, 1, movetoworkspacesilent, 1"
+      "$mod SHIFT, 2, movetoworkspacesilent, 2"
+      "$mod SHIFT, 3, movetoworkspacesilent, 3"
+      "$mod SHIFT, 4, movetoworkspacesilent, 4"
+      "$mod SHIFT, 5, movetoworkspacesilent, 5"
+      "$mod SHIFT, S, movetoworkspace, special:magic" 
 
     ];
 
