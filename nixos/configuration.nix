@@ -5,7 +5,16 @@
   config,
   pkgs,
   ...
-}: {
+}: 
+let fallout = pkgs.fetchFromGitHub
+  {
+    owner = "shvchk";
+    repo = "fallout-grub-theme";
+    rev = "80734103d0b48d724f0928e8082b6755bd3b2078";
+    sha256 = "sha256-7kvLfD6Nz4cEMrmCA9yq4enyqVyqiTkVZV5y4RyUatU=";
+  };
+in
+{
   imports = [
     # modules/nixos import
     # outputs.nixosModules.moduleName
@@ -22,6 +31,11 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub2-theme = {
+    enable = true;
+    theme = "tela";
+    footer = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Kyiv";

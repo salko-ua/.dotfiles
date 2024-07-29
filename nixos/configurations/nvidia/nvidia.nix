@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   # Enable OpenGL
   hardware.opengl = {
@@ -33,7 +33,9 @@
     open = false;
 
     # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
-    nvidiaSettings = true;
+    # accessible via `nvidia-settings`.
+    nvidiaSettings = false;
+
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 }

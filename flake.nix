@@ -11,12 +11,14 @@
     
     # theme
     catppuccin.url = "github:catppuccin/nix";
+    grub2-themes.url = "github:vinceliuice/grub2-themes";
   };
   outputs = inputs@ {
     self,
     nixpkgs,
     home-manager,
     catppuccin,
+    grub2-themes,
     ...
   }: 
   let
@@ -39,6 +41,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
 	  catppuccin.nixosModules.catppuccin
+	  grub2-themes.nixosModules.default
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
         ];
