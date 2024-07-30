@@ -54,7 +54,7 @@
 
 #workspaces button:hover {
   color: @red;
-  background-color: @surface0;
+  background-color: #313244;
   border-radius: 15px;
 }
 

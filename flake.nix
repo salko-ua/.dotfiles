@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "hix config";
 
   inputs = {
     # Nixpkgs
@@ -11,14 +11,12 @@
     
     # theme
     catppuccin.url = "github:catppuccin/nix";
-    grub2-themes.url = "github:vinceliuice/grub2-themes";
   };
   outputs = inputs@ {
     self,
     nixpkgs,
     home-manager,
     catppuccin,
-    grub2-themes,
     ...
   }: 
   let
@@ -32,38 +30,30 @@
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
-    overlays = import ./overlays {inherit inputs;};
-    nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
-
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-	  catppuccin.nixosModules.catppuccin
-	  grub2-themes.nixosModules.default
-          # > Our main nixos configuration file <
+	        catppuccin.nixosModules.catppuccin
           ./nixos/configuration.nix
         ];
       };
     };
 
-    # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       salo = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-	  catppuccin.homeManagerModules.catppuccin
-	  # > Our main home-manager configuration file <
+	        catppuccin.homeManagerModules.catppuccin
           ./home-manager/home.nix
-	  {
-	    home = {
-	      inherit username;
-	      homeDirectory = "/home/${username}";
-	    };
-	  }
-	];
+	        {
+	          home = {
+	            inherit username;
+	            homeDirectory = "/home/${username}";
+	          };
+	        }
+	      ];
       };
     };
   };

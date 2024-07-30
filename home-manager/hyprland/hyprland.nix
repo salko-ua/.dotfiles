@@ -1,12 +1,15 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
     xwayland.enable = true;
     systemd.enable = true;
   };
-  
+
   programs = {
     rofi = {
       enable = true;
@@ -38,7 +41,7 @@
     style = builtins.readFile ./style.css;
     systemd.enable = true;
   };
- 
+
   wayland.windowManager.hyprland.settings = {
     env = [
       # Nvidia
@@ -49,9 +52,8 @@
     ];
 
     exec-once = [
-      "[workspace 1 ] ./hello.sh"
-      
-      "[workspace 3 ] firefox"  
+      "[workspace 1 ] alacritty"
+      "[workspace 3 ] firefox"
     ];
 
     general = {
@@ -63,7 +65,7 @@
       resize_on_border = true;
       hover_icon_on_border = true;
     };
-    
+
     decoration = {
       rounding = 20;
       active_opacity = 1;
@@ -74,17 +76,17 @@
       "col.shadow" = "rgb(060606)";
       blur = {
         enabled = true;
-	size = 2;
-	new_optimizations = true;
+        size = 2;
+        new_optimizations = true;
       };
     };
 
     input = {
       sensitivity = -0.05;
       kb_layout = "us, ua";
-      kb_options=grp:alt_shift_toggle;
+      kb_options = grp:alt_shift_toggle;
     };
-    
+
     windowrule = [
       "float,^(Rofi)$"
       "center 1,^(Rofi)$"
@@ -98,7 +100,6 @@
 
       "float,class:(steam),title:(Friends List)"
       "center,class:(steam),title:(Friends List)"
-      
 
       "float,class:(pavucontrol),titile:(pavucontrol)"
       "center,class:(pavucontrol),titile:(pavucontrol)"
@@ -106,7 +107,7 @@
       "workspace 4,class:(steam),title:(Friends List)"
     ];
 
-    monitor = "eDP-1, 2560x1440@165, 0x0, 1.600000";    
+    monitor = "eDP-1, 2560x1440@165, 0x0, 1.600000";
 
     "$mod" = "SUPER";
     "$terminal" = "alacritty";
@@ -129,6 +130,7 @@
       # Workspace movement
       "$mod, Q, workspace, e-1"
       "$mod, E, workspace, e+1"
+      "$mode, S, togglespecialworkspace, magic"
       "ALT CTRL, Z, workspace, 3"
       "ALT CTRL, X, workspace, 4"
       "ALT CTRL, С, workspace, 5"
@@ -139,8 +141,7 @@
       "$mod SHIFT, 3, movetoworkspacesilent, 3"
       "$mod SHIFT, 4, movetoworkspacesilent, 4"
       "$mod SHIFT, 5, movetoworkspacesilent, 5"
-      "$mod SHIFT, S, movetoworkspace, special:magic" 
-
+      "$mod SHIFT, S, movetoworkspace, special:magic"
     ];
 
     bindm = [
@@ -150,4 +151,3 @@
     ];
   };
 }
-

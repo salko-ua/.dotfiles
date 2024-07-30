@@ -14,6 +14,7 @@
     fish.enable = true;
     gnome-terminal.enable = false;
     firefox.enable = true;
+    vscode.enable = true;
   };
 
   home.packages = with pkgs; [

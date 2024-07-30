@@ -15,6 +15,6 @@
       padding.y = 15;
     };
 
-    mouse.hide_when_typing = true;
+    mouse.hide_when_typing = false;
   };
 }
