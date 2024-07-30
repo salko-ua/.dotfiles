@@ -14,9 +14,7 @@
   # Enable NVIDIA 
   services.xserver.videoDrivers = ["nvidia"];
   hardware.graphics = { 
-     enable = true; 
-     driSupport = true; 
-     driSupport32Bit = true; 
+     enable = true;  
    }; 
    
 

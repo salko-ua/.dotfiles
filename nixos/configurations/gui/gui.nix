@@ -63,11 +63,6 @@
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
       xdg-desktop-portal-kde
-      xdg-desktop-portal-lxqt
-      xdg-desktop-portal-pantheon
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-dde
-      xdg-desktop-portal-xapp
     ];
   };
 }
