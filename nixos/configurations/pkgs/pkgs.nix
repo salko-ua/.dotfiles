@@ -1,11 +1,11 @@
 { pkgs, ... }:
 {
   programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      systemd.setPath.enable = true;
-    };
+    #hyprland = {
+    #  enable = true;
+    #  xwayland.enable = true;
+    #  systemd.setPath.enable = true;
+    #};
   };
 
   environment = {
@@ -15,13 +15,13 @@
       discord # Discord
       telegram-desktop # Telegram
 
-      swaybg # Wallpaper manager
-      pavucontrol # Sound manager
-      waybar # Waybar for hyprland
-      eww # ...
-      dunst # ...
-      libnotify # ...
-      swww # ...
+      #swaybg # Wallpaper manager
+      #pavucontrol # Sound manager
+      #waybar # Waybar for hyprland
+      #eww # ...
+      #dunst # ...
+      #libnotify # ...
+      #swww # ...
     ];
   };
 

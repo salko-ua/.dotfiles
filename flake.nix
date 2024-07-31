@@ -8,6 +8,12 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     
     # theme
     catppuccin.url = "github:catppuccin/nix";
@@ -16,6 +22,7 @@
     self,
     nixpkgs,
     home-manager,
+    plasma-manager,
     catppuccin,
     ...
   }: 
@@ -45,15 +52,16 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-	        catppuccin.homeManagerModules.catppuccin
+	  catppuccin.homeManagerModules.catppuccin
+	  inputs.plasma-manager.homeManagerModules.plasma-manager
           ./home-manager/home.nix
-	        {
-	          home = {
-	            inherit username;
-	            homeDirectory = "/home/${username}";
-	          };
-	        }
-	      ];
+	  {
+	    home = {
+	      inherit username;
+	      homeDirectory = "/home/${username}";
+	    };
+	  }
+	];
       };
     };
   };

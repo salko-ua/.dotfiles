@@ -15,7 +15,8 @@
 
     # You can also split up your configuration and import pieces of it here:
     ./pkgs.nix
-    ./hyprland/hyprland.nix
+    ./plasma/plasma.nix
+    #./hyprland/hyprland.nix
     ./theme/theme.nix
     ./terminal/fish.nix
     ./terminal/alacritty.nix

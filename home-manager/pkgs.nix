@@ -18,6 +18,11 @@
   };
 
   home.packages = with pkgs; [
+    # KDE THEME
+    bibata-cursors
+    papirus-icon-theme
+    utterly-round-plasma-style
+   
     zip
     git
     baobab

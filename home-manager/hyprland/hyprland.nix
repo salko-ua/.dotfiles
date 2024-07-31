@@ -107,7 +107,7 @@
       "workspace 4,class:(steam),title:(Friends List)"
     ];
 
-    monitor = "eDP-1, 2560x1440@60, 0x0, 1.600000";
+    monitor = "eDP-1, 2560x1440@165, 0x0, 1.600000";
 
     "$mod" = "SUPER";
     "$terminal" = "alacritty";

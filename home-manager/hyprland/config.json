@@ -45,13 +45,6 @@
       ""
     ]
   },
-  "bluetooth": {
-    "format": " {num_connections}",
-    "format_off": "󰂲",
-    "format_disabled": "󰂲",
-    "tooltip": true,
-    "tooltip-format": "{status}\n\n{device_enumerate}"
-  },
   "clock": {
     "interval": 1,
     "format": " {:%H:%M:%S}",
