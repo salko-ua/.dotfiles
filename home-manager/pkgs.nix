@@ -15,6 +15,7 @@
     gnome-terminal.enable = false;
     firefox.enable = true;
     vscode.enable = true;
+    java.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -22,6 +23,9 @@
     bibata-cursors
     papirus-icon-theme
     utterly-round-plasma-style
+
+    # Minecraft
+    prismlauncher
    
     zip
     git
