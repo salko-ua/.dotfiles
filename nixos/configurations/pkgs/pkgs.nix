@@ -16,7 +16,7 @@
       telegram-desktop # Telegram
 
       #swaybg # Wallpaper manager
-      #pavucontrol # Sound manager
+      pavucontrol # Sound manager
       #waybar # Waybar for hyprland
       #eww # ...
       #dunst # ...
