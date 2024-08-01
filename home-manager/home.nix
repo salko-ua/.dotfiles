@@ -20,6 +20,7 @@
     ./theme/theme.nix
     ./terminal/fish.nix
     ./terminal/alacritty.nix
+    ./firefox/firefox.nix
     ./git/git.nix
   ];
 
