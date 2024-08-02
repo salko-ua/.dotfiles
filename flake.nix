@@ -14,6 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    nur.url = "github:nix-community/NUR";
     
     # theme
     catppuccin.url = "github:catppuccin/nix";
