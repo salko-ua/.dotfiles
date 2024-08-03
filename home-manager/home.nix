@@ -25,7 +25,11 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  overlays = with inputs; [ nur.overlay ];
+  
+  nixpkgs.overlays = with inputs; [
+    nur.overlay
+  ];
+
   home = {
     username = "salo";
     homeDirectory = "/home/salo";

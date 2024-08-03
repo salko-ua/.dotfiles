@@ -14,6 +14,9 @@
       vesktop # Discord
       discord # Discord
       telegram-desktop # Telegram
+      wineWowPackages.stable # wine
+      winetricks
+      bitwarden # bitwarden
 
       #swaybg # Wallpaper manager
       pavucontrol # Sound manager
