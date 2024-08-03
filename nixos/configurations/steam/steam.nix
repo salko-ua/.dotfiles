@@ -1,6 +1,6 @@
 { pkgs, ... }: 
 {
-  steam = pkgs.steam.overrideAttrs = (e: rec {
+  pkgs.steam.overrideAttrs = (e: rec {
     # Add arguments to the .desktop entry
     desktopItem = e.desktopItem.override (d: {
       exec = "${d.exec} -forcedesktopscaling 1.5 %u";
