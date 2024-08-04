@@ -13,13 +13,13 @@
       iconTheme = "Papirus-Dark";
       wallpaper = ./home_night.png;
       splashScreen = {
-	engine = null;
-	theme = null;
+	theme = "None";
       };
       windowDecorations = {
 	library = "org.kde.kwin.aurorae";
 	theme="__aurorae__svg__Utterly-Round-Dark";
       };
+      theme = "Utterly-Round";
     };
 
     hotkeys = {
@@ -102,7 +102,7 @@
 	translucency.enable = true;
 	minimization = {
 	  animation = "magiclamp";
-	  duration = 50;
+	  duration = 300;
 	};
 	wobblyWindows.enable = true;
 	desktopSwitching.animation = "slide";
@@ -113,7 +113,6 @@
           rows = 2;
           number = lib.mkForce 6;
       };
-      borderlessMaximizedWindows = true;
       edgeBarrier = 40;
     };
 
@@ -351,13 +350,13 @@
 
       "kwinrc"."Effect-blur"."BlurStrength" = 1;
       "kwinrc"."Effect-blur"."NoiseStrength" = 1;
-      "kwinrc"."Effect-magiclamp"."AnimationDuration" = 50;
+      "kwinrc"."Effect-magiclamp"."AnimationDuration" = 300;
       "kwinrc"."Effect-translucency"."ComboboxPopups" = 96;
       "kwinrc"."Effect-translucency"."DropdownMenus" = 96;
-      "kwinrc"."Effect-translucency"."Menus" = 99;
-      "kwinrc"."Effect-translucency"."MoveResize" = 90;
-      "kwinrc"."Effect-translucency"."PopupMenus" = 50;
-      "kwinrc"."Effect-translucency"."TornOffMenus" = 50;
+      "kwinrc"."Effect-translucency"."Menus" = 100;
+      "kwinrc"."Effect-translucency"."MoveResize" = 100;
+      "kwinrc"."Effect-translucency"."PopupMenus" = 100;
+      "kwinrc"."Effect-translucency"."TornOffMenus" = 100;
     };
   };
 

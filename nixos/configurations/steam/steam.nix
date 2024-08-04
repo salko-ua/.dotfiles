@@ -1,16 +1,17 @@
 { pkgs, ... }: 
 {
-  pkgs.steam.overrideAttrs = (e: rec {
-    # Add arguments to the .desktop entry
-    desktopItem = e.desktopItem.override (d: {
-      exec = "${d.exec} -forcedesktopscaling 1.5 %u";
-    });
-
-    # Update the install script to use the new .desktop entry
-    installPhase = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.installPhase;
-  });
+  nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs:
+        with pkgs; [
+          mangohud
+          gamemode
+        ];
+    };
+  };
   
-
+  
+  
   hardware.graphics = {
     extraPackages = with pkgs; [mangohud];
     extraPackages32 = with pkgs; [mangohud];
