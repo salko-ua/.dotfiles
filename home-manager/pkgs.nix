@@ -6,6 +6,8 @@
     bash.enable = false;
     fish.enable = true;
     java.enable = true;
+    spotify-player.enable = true;
+    kdeconnect.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -19,6 +21,5 @@
    
     zip
     git
-    baobab
   ];
 }

@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   programs = {
+    partition-manager.enable = true;
     #hyprland = {
     #  enable = true;
     #  xwayland.enable = true;
@@ -17,6 +18,10 @@
       wineWowPackages.stable # wine
       winetricks
       bitwarden # bitwarden
+
+      #kde
+      filelight
+      kcalc
 
       #swaybg # Wallpaper manager
       pavucontrol # Sound manager

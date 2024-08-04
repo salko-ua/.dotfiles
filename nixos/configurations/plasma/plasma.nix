@@ -8,6 +8,8 @@
     plasma-browser-integration
     konsole
     oxygen
+    kwalletmanager
+
   ];
 
   programs.dconf.enable = true;
