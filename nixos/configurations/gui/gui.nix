@@ -9,8 +9,8 @@
   
   security.polkit.enable = true;
   
-  hardware.bluetooth.enable = false;
-  hardware.bluetooth.powerOnBoot = false;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   services.xserver = {
     enable = true;
@@ -65,5 +65,6 @@
       xdg-desktop-portal-kde
     ];
   };
-   
+
+  networking.networkmanager.enable = true;
 }
