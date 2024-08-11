@@ -39,11 +39,13 @@
     #packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
+    overlays = import ./overlays {inherit inputs;};
+
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-	        catppuccin.nixosModules.catppuccin
+	   catppuccin.nixosModules.catppuccin
           ./nixos/configuration.nix
         ];
       };

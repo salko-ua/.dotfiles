@@ -44,39 +44,40 @@
         widgets = [
 	  "org.kde.plasma.showdesktop"
           "org.kde.plasma.panelspacer"
-          "org.kde.plasma.kickoff"
+	  {
+	    kickoff = {
+	      icon = "nix-showflake";
+	      favoriteDisplayMode = "grid";
+	      applicationsDisplayMode = "grid";
+	      showButtonsFor = "powerAndSession";
+	      showActionButtonCaptions = false;
+	   };
+	  }
           "org.kde.plasma.icontasks"
           "org.kde.plasma.panelspacer"
           "org.kde.plasma.systemtray"
-          "org.kde.plasma.digitalclock"
+	  {
+            digitalClock = {
+	      time = {
+	        showSeconds = "alaways";
+	        format = "24h";
+	      };
+	      calendar = {
+	       firstDayOfWeek = "monday";
+	       plugins = ["holidays"];
+	       showWeekNumbers = true;
+	      };
+	      settings = {
+	        appearance = {
+	          fontSize = 10;
+	        };
+	      };
+            };	
+	  }
 	  "org.kde.plasma.pager"
         ];
-	# widgets = {  
-        #  digitalClock = {
-	#    time = {
-	#      showSeconds = "alaways";
-	#      format = "24h";
-	#    };
-	#     calendar = {
-	#       firstDayOfWeek = "monday";
-	#       plugins = ["holidays"];
-	#       showWeekNumbers = true;
-	#     };
-	#     settings = {
-	#       appearance = {
-	#         fontSize = 10;
-	#       };
-	#     };
-	#   keyboardlayout.general.displayStyle = 1;
-	#   kickoff = {
-	#     icon = "nix-showflake";
-	#            favoriteDisplayMode = "grid";
-	#     applicationsDisplayMode = "grid";
-	#     showButtonsFor = "powerAndSession";
-	#     showActionButtonCaptions = false;
-	#   };
-	# };
       }
+
     ];
     
 
@@ -312,9 +313,9 @@
       "org_kde_powerdevil"."Turn Off Screen" = [ ];
       "org_kde_powerdevil"."powerProfile" = [ ];
       "plasmashell"."activate application launcher" = [ ];
-      "plasmashell"."activate task manager entry 1" = "none";
-      "plasmashell"."activate task manager entry 2" = "none";
-      "plasmashell"."activate task manager entry 3" = "none";
+      "plasmashell"."activate task manager entry 1" = "Meta+Shift+1";
+      "plasmashell"."activate task manager entry 2" = "Meta+Shift+2";
+      "plasmashell"."activate task manager entry 3" = "Meta+Shift+3";
       "plasmashell"."activate task manager entry 4" = "none";
       "plasmashell"."activate task manager entry 5" = "none";
       "plasmashell"."activate task manager entry 6" = "none";
@@ -326,7 +327,7 @@
       "plasmashell"."clipboard_action" = "none";
       "plasmashell"."cycleNextAction" = "none";
       "plasmashell"."cyclePrevAction" = "none";
-      "plasmashell"."manage activities" = "none";
+      "plasmashell"."manage activities" = "Meta+A";
       "plasmashell"."next activity" = "none";
       "plasmashell"."previous activity" = "none";
       "plasmashell"."repeat_action" = "none";

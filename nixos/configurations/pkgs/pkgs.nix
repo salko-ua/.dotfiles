@@ -19,10 +19,17 @@
       wineWowPackages.stable # wine
       winetricks
       bitwarden # bitwarden
+      obs-studio # obs-studio
 
       #kde
       filelight
       kcalc
+
+      # Office
+      libreoffice-qt
+      hunspell
+      hunspellDicts.uk_UA
+      hunspellDicts.en_US
 
       #swaybg # Wallpaper manager
       pavucontrol # Sound manager

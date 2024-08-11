@@ -5,12 +5,11 @@
     user = "salo";
   };
   
-  nixpkgs.config.allowUnfree = true;
   
   security.polkit.enable = true;
   
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.powerOnBoot = false;
 
   services.xserver = {
     enable = true;
