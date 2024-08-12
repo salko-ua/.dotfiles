@@ -2,7 +2,7 @@
 {
   programs.plasma = {
     enable = true;
-    kscreenlocker.wallpaper = ./home_night.png;
+    kscreenlocker.appearance.wallpaper = ./home_night.png;
     windows.allowWindowsToRememberPositions = true;
     workspace = {
       clickItemTo = "select";
@@ -44,22 +44,22 @@
         widgets = [
 	  "org.kde.plasma.showdesktop"
           "org.kde.plasma.panelspacer"
-	  {
-	    kickoff = {
-	      icon = "nix-showflake";
-	      favoriteDisplayMode = "grid";
-	      applicationsDisplayMode = "grid";
-	      showButtonsFor = "powerAndSession";
-	      showActionButtonCaptions = false;
-	   };
-	  }
+	  "org.kde.plasma.kickerdash"
           "org.kde.plasma.icontasks"
           "org.kde.plasma.panelspacer"
           "org.kde.plasma.systemtray"
+	  #{
+          #  systemTray = {
+          #    items.config = {
+          #      keyboardLayout.displayStyle = "flag"; # or label or labelOverFlag
+          #    };
+          #  };
+          #}
+
 	  {
             digitalClock = {
 	      time = {
-	        showSeconds = "alaways";
+	        showSeconds = "always";
 	        format = "24h";
 	      };
 	      calendar = {
@@ -69,7 +69,7 @@
 	      };
 	      settings = {
 	        appearance = {
-	          fontSize = 10;
+	          fontSize = 11;
 	        };
 	      };
             };	
