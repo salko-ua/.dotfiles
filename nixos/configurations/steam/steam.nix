@@ -9,13 +9,6 @@
         ];
     };
   };
-  
-  
-  
-  hardware.graphics = {
-    extraPackages = with pkgs; [mangohud];
-    extraPackages32 = with pkgs; [mangohud];
-  };
 
   programs.steam = {
     enable = true;

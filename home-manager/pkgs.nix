@@ -1,12 +1,12 @@
 {pkgs, ...}: {
   programs = {
     home-manager.enable = true;
-    neovim.enable = true;
     alacritty.enable = true;
     bash.enable = false;
     fish.enable = true;
     java.enable = true;
     spotify-player.enable = true;
+    gh.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -17,7 +17,7 @@
 
     # Minecraft
     prismlauncher
-   
+    neovim 
     zip
     git
   ];

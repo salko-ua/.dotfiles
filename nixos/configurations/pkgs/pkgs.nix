@@ -21,6 +21,16 @@
       bitwarden # bitwarden
       obs-studio # obs-studio
 
+      # Dev
+      poetry
+      python3
+      nodejs_22
+
+      # IDE
+      jetbrains.pycharm-professional
+      jetbrains.webstorm
+      zed-editor
+
       #kde
       filelight
       kcalc
@@ -31,14 +41,17 @@
       hunspellDicts.uk_UA
       hunspellDicts.en_US
 
-      #swaybg # Wallpaper manager
+      # widgets
+      kdePackages.qtwebengine
+
       pavucontrol # Sound manager
-      #waybar # Waybar for hyprland
-      #eww # ...
-      #dunst # ...
-      #libnotify # ...
-      #swww # ...
+
+      gnumake
+      gcc
+      unzip
+      ripgrep     
     ];
   };
 
 }
+

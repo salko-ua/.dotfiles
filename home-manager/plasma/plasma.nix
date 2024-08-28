@@ -313,9 +313,9 @@
       "org_kde_powerdevil"."Turn Off Screen" = [ ];
       "org_kde_powerdevil"."powerProfile" = [ ];
       "plasmashell"."activate application launcher" = [ ];
-      "plasmashell"."activate task manager entry 1" = "Meta+Shift+1";
-      "plasmashell"."activate task manager entry 2" = "Meta+Shift+2";
-      "plasmashell"."activate task manager entry 3" = "Meta+Shift+3";
+      "plasmashell"."activate task manager entry 1" = "none";
+      "plasmashell"."activate task manager entry 2" = "none";
+      "plasmashell"."activate task manager entry 3" = "none";
       "plasmashell"."activate task manager entry 4" = "none";
       "plasmashell"."activate task manager entry 5" = "none";
       "plasmashell"."activate task manager entry 6" = "none";
@@ -335,8 +335,8 @@
       "plasmashell"."show-barcode" = "none";
       "plasmashell"."show-on-mouse-pos" = "none";
       "plasmashell"."stop current activity" = "none";
-      "plasmashell"."switch to next activity" = "none";
-      "plasmashell"."switch to previous activity" = "none";
+      "plasmashell"."switch to next activity" = "Meta+A+E";
+      "plasmashell"."switch to previous activity" = "Meta+A+Q";
       "plasmashell"."toggle do not disturb" = "none";
     };
 
