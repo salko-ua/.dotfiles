@@ -59,7 +59,6 @@
       gcc
       unzip
       ripgrep
-      ipython
     ];
   };
 
