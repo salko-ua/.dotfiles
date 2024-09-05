@@ -1,20 +1,17 @@
 { pkgs, ... }:
 {
   services.xserver.enable = true;
-  services.xserver = {
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
-  services.displayManager.sddm.enable = false;
-  services.desktopManager.plasma6.enable = false;
-  services.displayManager.defaultSession = "gnome";
-  # environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  #   plasma-browser-integration
-  #   konsole
-  #   oxygen
-  #   kwalletmanager
-  #
-  # ];
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "plasma";
+  hardware.pulseaudio.enable = true;
+   environment.plasma6.excludePackages = with pkgs.kdePackages; [
+     plasma-browser-integration
+     konsole
+     oxygen
+     kwalletmanager
+   ];
 
   programs.dconf.enable = true;
 }
