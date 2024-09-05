@@ -33,7 +33,7 @@
       nodejs_22
 
       # Tools
-      lswh
+      lshw
       steamguard-cli
 
       # IDE
