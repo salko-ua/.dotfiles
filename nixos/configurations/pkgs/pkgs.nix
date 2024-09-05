@@ -3,6 +3,7 @@
   programs = {
     partition-manager.enable = true;
     kdeconnect.enable = true;
+
     #hyprland = {
     #  enable = true;
     #  xwayland.enable = true;
@@ -20,6 +21,10 @@
       winetricks
       bitwarden # bitwarden
       obs-studio # obs-studio
+      logmein-hamachi
+      zerotierone
+      flatpak
+      gnufdisk
 
       # Dev
       poetry
@@ -43,6 +48,7 @@
 
       # widgets
       kdePackages.qtwebengine
+      kdePackages.isoimagewriter
 
       pavucontrol # Sound manager
 
