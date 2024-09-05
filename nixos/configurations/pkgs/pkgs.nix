@@ -28,13 +28,17 @@
 
       # Dev
       poetry
+      python312Packages.ipython
       python3
       nodejs_22
+
+      # Tools
+      lswh
+      steamguard-cli
 
       # IDE
       jetbrains.pycharm-professional
       jetbrains.webstorm
-      zed-editor
 
       #kde
       filelight
@@ -51,11 +55,11 @@
       kdePackages.isoimagewriter
 
       pavucontrol # Sound manager
-
       gnumake
       gcc
       unzip
-      ripgrep     
+      ripgrep
+      ipython
     ];
   };
 
