@@ -14,7 +14,7 @@
   environment = {
     systemPackages = with pkgs; [
       home-manager # Generations manager
-      # vesktop # Discord
+      vesktop # Discord
       discord # Discord
       telegram-desktop # Telegram
       wineWowPackages.stable # wine
