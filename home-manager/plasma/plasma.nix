@@ -84,7 +84,17 @@
 	  {
 	    keyboardLayout.displayStyle = "flag";
 	  }
-	  "org.kde.plasma.systemtray"
+	  {
+            systemTray.items = {
+              hidden = [
+		"org.kde.plasma.keyboardlayout"
+                "org.kde.plasma.battery"
+                "org.kde.plasma.bluetooth"
+		"org.kde.plasma.networkmanagement"
+                "org.kde.plasma.volume"
+              ];
+            };
+          }
         ];
       }
     ];
