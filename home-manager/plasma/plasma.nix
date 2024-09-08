@@ -42,7 +42,12 @@
 	hiding = "dodgewindows";
 	floating = true;
 	widgets = [
-	  "org.kde.plasma.kickerdash"
+	  {
+	    kickerdash = {
+	      icon = "distributor-logo-nixos";
+	      applicationNameFormat = "nameOnly";
+	    };
+	  }
           "org.kde.plasma.icontasks"
 	]; 
       }
@@ -58,9 +63,10 @@
           "org.kde.plasma.panelspacer" 
 	  {
             digitalClock = {
+	      date.enable = false;
 	      time = {
 	        showSeconds = "always";
-	        format = "24h";
+	        format = "12h";
 	      };
 	      calendar = {
 	       firstDayOfWeek = "monday";
@@ -75,7 +81,10 @@
             };	
 	  }
 	  "org.kde.plasma.panelspacer"
-          "org.kde.plasma.systemtray"
+	  {
+	    keyboardLayout.displayStyle = "flag";
+	  }
+	  "org.kde.plasma.systemtray"
         ];
       }
     ];
@@ -111,8 +120,8 @@
 	blur.enable = true;
       };
       virtualDesktops = {
-          rows = 2;
-          number = lib.mkForce 6;
+          rows = 1;
+          number = lib.mkForce 3;
       };
       edgeBarrier = 40;
     };
@@ -137,8 +146,6 @@
       "kwin"."Window Operations Menu" = "Alt+F3";
       "kwin"."view_zoom_in" = ["Meta++" "Meta+=,Meta++" "Meta+=,Zoom In"];
       "kwin"."view_zoom_out" = "Meta+-";
-
-      # Switch workspace
       "kwin"."Switch One Desktop Down" = "Meta+F";
       "kwin"."Switch One Desktop Up" = "Meta+R";
       "kwin"."Switch One Desktop to the Left" = "Meta+Q";
@@ -146,16 +153,10 @@
       "kwin"."Switch to Desktop 1" = "Meta+1";
       "kwin"."Switch to Desktop 2" = "Meta+2";
       "kwin"."Switch to Desktop 3" = "Meta+3";
-      "kwin"."Switch to Desktop 4" = "Meta+4";
-      "kwin"."Switch to Desktop 5" = "Meta+5";
-      "kwin"."Switch to Desktop 6" = "Meta+6";
 
       "kwin"."Window to Desktop 1" = "Meta+Shift+1";
       "kwin"."Window to Desktop 2" = "Meta+Shift+2";
       "kwin"."Window to Desktop 3" = "Meta+Shift+3";
-      "kwin"."Window to Desktop 4" = "Meta+Shift+4";
-      "kwin"."Window to Desktop 5" = "Meta+Shift+5";
-      "kwin"."Window to Desktop 6" = "Meta+Shift+6";
 
       "kwin"."Window Quick Tile Bottom" = "Meta+Down";
       "kwin"."Window Quick Tile Bottom Left" = "none";
@@ -275,11 +276,11 @@
       "kwin"."Window Shrink Horizontal" = "none";
       "kwin"."Window Shrink Vertical" = "none";
       #"kwin"."Window to Desktop 1" = "none";
-      #"kwin"."Window to Desktop 2" = "none";
+      #"kwin"."Window to Desktop 2" = "none"; USED
       #"kwin"."Window to Desktop 3" = "none";
-      #"kwin"."Window to Desktop 4" = "none"; #USED
-      #"kwin"."Window to Desktop 5" = "none";
-      #"kwin"."Window to Desktop 6" = "none";
+      "kwin"."Window to Desktop 4" = "none"; 
+      "kwin"."Window to Desktop 5" = "none";
+      "kwin"."Window to Desktop 6" = "none";
       "kwin"."Window to Desktop 7" = "none";
       "kwin"."Window to Desktop 8" = "none";
       "kwin"."Window to Desktop 9" = "none";
