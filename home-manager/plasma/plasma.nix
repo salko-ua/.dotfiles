@@ -36,26 +36,26 @@
       # Windows-like panel at the bottom
       {
         height = 50;
-	lengthMode = "fill";
+	lengthMode = "fit";
         location = "bottom";
 	alignment = "center";
 	hiding = "dodgewindows";
 	floating = true;
-        widgets = [
-	  "org.kde.plasma.showdesktop"
-          "org.kde.plasma.panelspacer"
+	widgets = [
 	  "org.kde.plasma.kickerdash"
           "org.kde.plasma.icontasks"
-          "org.kde.plasma.panelspacer"
-          "org.kde.plasma.systemtray"
-	  #{
-          #  systemTray = {
-          #    items.config = {
-          #      keyboardLayout.displayStyle = "flag"; # or label or labelOverFlag
-          #    };
-          #  };
-          #}
-
+	]; 
+      }
+      {
+	height = 40;
+	lengthMode = "fill";
+	location = "top";
+	alignment = "center";
+	hiding = "none";
+	floating = true;	
+        widgets = [
+	  "org.kde.plasma.pager"
+          "org.kde.plasma.panelspacer" 
 	  {
             digitalClock = {
 	      time = {
@@ -74,10 +74,10 @@
 	      };
             };	
 	  }
-	  "org.kde.plasma.pager"
+	  "org.kde.plasma.panelspacer"
+          "org.kde.plasma.systemtray"
         ];
       }
-
     ];
     
 
