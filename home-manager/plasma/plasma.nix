@@ -11,7 +11,7 @@
 	size = 32;
       };
       iconTheme = "Papirus-Dark";
-      wallpaper = ./home_night.png;
+      wallpaper = ./home_night.jpg;
       splashScreen = {
 	theme = "None";
       };
