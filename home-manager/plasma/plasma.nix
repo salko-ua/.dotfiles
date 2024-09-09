@@ -86,12 +86,19 @@
 	  }
 	  {
             systemTray.items = {
+	      shown = [
+		"org.kde.plasma.networkmanagement"
+                "org.kde.plasma.volume"
+	      ];
               hidden = [
 		"org.kde.plasma.keyboardlayout"
                 "org.kde.plasma.battery"
                 "org.kde.plasma.bluetooth"
-		"org.kde.plasma.networkmanagement"
-                "org.kde.plasma.volume"
+		"org.kde.plasma.battery"
+		"org.kde.plasma.notifications"
+		"org.kde.kdeconnect"
+		"org.kde.plasma.mediacontroller"
+		"org.kde.plasma.clipboard"
               ];
             };
           }
