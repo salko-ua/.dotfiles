@@ -25,6 +25,7 @@
       zerotierone
       flatpak
       gnufdisk
+      variety
 
       # Dev
       poetry
