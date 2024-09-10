@@ -7,6 +7,7 @@
     java.enable = true;
     spotify-player.enable = true;
     gh.enable = true;
+    btop.enable = true;
   };
 
   home.packages = with pkgs; [
