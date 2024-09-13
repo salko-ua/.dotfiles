@@ -26,6 +26,7 @@
       flatpak
       gnufdisk
       variety
+      nvtop
 
       # Dev
       poetry
