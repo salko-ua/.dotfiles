@@ -37,7 +37,7 @@
 	"previous-variety" = {
 	  name = "Previous photo in Variety";
 	  key = "Alt+Shift+V";
-	  command = "ariety --previous";
+	  command = "variety --previous";
 	};
       };
     };
