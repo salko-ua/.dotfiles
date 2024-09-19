@@ -55,6 +55,7 @@
       # widgets
       kdePackages.qtwebengine
       kdePackages.isoimagewriter
+      dragon
 
       pavucontrol # Sound manager
       gnumake

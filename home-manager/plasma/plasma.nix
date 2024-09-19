@@ -29,6 +29,16 @@
           key = "Alt+T";
           command = "alacritty";
         };
+	"next-variety" = {
+	  name = "Next photo in Variety";
+	  key = "Alt+Shift+B";
+	  command = "variety --next";
+	};
+	"previous-variety" = {
+	  name = "Previous photo in Variety";
+	  key = "Alt+Shift+V";
+	  command = "ariety --previous";
+	};
       };
     };
 
