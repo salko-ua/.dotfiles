@@ -31,6 +31,7 @@
       # Dev
       poetry
       python312Packages.ipython
+      python312Packages.greenlet
       python3
       nodejs_22
 
@@ -41,6 +42,7 @@
       # IDE
       jetbrains.pycharm-professional
       jetbrains.webstorm
+      mycli
 
       #kde
       filelight
