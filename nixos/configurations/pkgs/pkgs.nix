@@ -38,6 +38,7 @@
       # Tools
       lshw
       steamguard-cli
+      yt-dlp
 
       # IDE
       jetbrains.pycharm-professional
