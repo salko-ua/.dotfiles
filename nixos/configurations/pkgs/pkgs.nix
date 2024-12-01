@@ -59,6 +59,7 @@
       kdePackages.qtwebengine
       kdePackages.isoimagewriter
       dragon
+      mangohud
 
       pavucontrol # Sound manager
       gnumake
