@@ -15,6 +15,9 @@
     bibata-cursors
     papirus-icon-theme
     utterly-round-plasma-style
+    
+    # qbittorent
+    qbittorrent
 
     # Minecraft
     prismlauncher

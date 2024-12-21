@@ -129,13 +129,12 @@
       recordRegion = null;
       recordScreen = null;
       recordWindow = null;
-    };
-    
+    }; 
     kwin = {
       titlebarButtons.right = ["minimize" "maximize" "close"];
       titlebarButtons.left = ["help" "keep-above-windows"];
       effects = {
-	shakeCursor.enable = false;
+	shakeCursor.enable = true;
 	translucency.enable = true;
 	minimization = {
 	  animation = "magiclamp";
@@ -144,13 +143,12 @@
 	wobblyWindows.enable = true;
 	desktopSwitching.animation = "slide";
 	windowOpenClose.animation = "fade";
-	blur.enable = true;
+	blur.enable = false;
       };
       virtualDesktops = {
-          rows = 1;
+          rows = 2;
           number = lib.mkForce 3;
       };
-      edgeBarrier = 40;
     };
 
     
@@ -376,9 +374,6 @@
     #
     configFile = {
       "baloofilerc"."Basic Settings"."Indexing-Enabled" = false;
-
-      "kwinrc"."Effect-blur"."BlurStrength" = 1;
-      "kwinrc"."Effect-blur"."NoiseStrength" = 1;
       "kwinrc"."Effect-magiclamp"."AnimationDuration" = 300;
       "kwinrc"."Effect-translucency"."ComboboxPopups" = 96;
       "kwinrc"."Effect-translucency"."DropdownMenus" = 96;
