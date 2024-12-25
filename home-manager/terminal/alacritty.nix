@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.alacritty.settings = {
-    shell.program = "${pkgs.fish}/bin/fish";
+    terminal.shell.program = "${pkgs.fish}/bin/fish";
     window = {
       dimensions = {
         columns = 80;

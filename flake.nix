@@ -42,7 +42,7 @@
     overlays = import ./overlays {inherit inputs;};
 
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      salo = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
 	   catppuccin.nixosModules.catppuccin

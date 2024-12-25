@@ -2,7 +2,7 @@
 {
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
-  networking.hostName = "nixos";
+  networking.hostName = "salo";
 
   users.users = {
     salo = {
