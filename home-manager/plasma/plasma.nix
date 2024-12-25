@@ -145,7 +145,7 @@
 	blur.enable = false;
       };
       virtualDesktops = {
-          rows = 2;
+          rows = 1;
           number = lib.mkForce 3;
       };
     };
