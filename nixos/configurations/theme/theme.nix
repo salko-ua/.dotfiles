@@ -1,17 +1,17 @@
 {
   # grub
-  boot.loader.grub.catppuccin.enable = true;
-  boot.loader.grub.catppuccin.flavor = "mocha";
-  boot.plymouth.catppuccin.enable = false;
-  boot.plymouth.catppuccin.flavor = "mocha";
+  catppuccin.grub.enable = true;
+  catppuccin.grub.flavor = "mocha";
+  catppuccin.plymouth.enable = false;
+  catppuccin.plymouth.flavor = "mocha";
   
 
   # lock screen
-  services.displayManager.sddm.catppuccin.enable = true;
-  services.displayManager.sddm.catppuccin.background = ./home_night.png;
-  services.displayManager.sddm.catppuccin.flavor = "mocha";
-  services.displayManager.sddm.catppuccin.fontSize = "14";
-  services.displayManager.sddm.catppuccin.loginBackground = false;
+  # catppuccin.sddm.loginBackground.enable = true;
+  catppuccin.sddm.background = ./home_night.png;
+  catppuccin.sddm.flavor = "mocha";
+  catppuccin.sddm.fontSize = "14";
+  catppuccin.sddm.loginBackground = false;
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
 }

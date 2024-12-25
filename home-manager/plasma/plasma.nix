@@ -3,7 +3,7 @@
   programs.plasma = {
     enable = true;
     kscreenlocker.appearance.wallpaper = ./home_night.png;
-    windows.allowWindowsToRememberPositions = true;
+    windows.allowWindowsToRememberPositions = false;
     workspace = {
       clickItemTo = "select";
       cursor = {
@@ -39,6 +39,11 @@
 	  key = "Alt+Shift+V";
 	  command = "variety --previous";
 	};
+	"krunner" = {
+	  name = "start krunner";
+	  key = "Ctrl+Space";
+	  command = "krunner";
+	};
       };
     };
 
@@ -52,12 +57,6 @@
 	hiding = "dodgewindows";
 	floating = true;
 	widgets = [
-	  {
-	    kickerdash = {
-	      icon = "distributor-logo-nixos";
-	      applicationNameFormat = "nameOnly";
-	    };
-	  }
           "org.kde.plasma.icontasks"
 	]; 
       }
