@@ -39,10 +39,10 @@
 	  key = "Alt+Shift+V";
 	  command = "variety --previous";
 	};
-	"krunner" = {
-	  name = "start krunner";
-	  key = "Ctrl+Space";
-	  command = "krunner";
+	"rofi" = {
+	  name = "start rofi";
+	  key = "Alt+Shift+R";
+	  command = "rofi -show drun";
 	};
       };
     };

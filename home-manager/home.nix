@@ -22,6 +22,7 @@
     ./terminal/alacritty.nix
     ./firefox/firefox.nix
     ./git/git.nix
+    ./rofi/rofi.nix
   ];
 
   
