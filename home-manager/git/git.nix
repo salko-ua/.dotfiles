@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
     userName = "salko-ua";
-    userEmail = "chips69jamil69game@gmail.com";
+    userEmail = "github@salko-ua.de";
     #signing = {
     #  key = "313F67D1EAB770F9";
     #  signByDefault = true;
