@@ -7,6 +7,7 @@
     java.enable = true;
     spotify-player.enable = true;
     gh.enable = true;
+    nix-index-database.comma.enable = true;
     btop.enable = true;
   };
 

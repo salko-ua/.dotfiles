@@ -15,8 +15,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
     nur.url = "github:nix-community/NUR";
-    
+
     # theme
     catppuccin.url = "github:catppuccin/nix";
   };
@@ -26,6 +29,7 @@
     home-manager,
     plasma-manager,
     catppuccin,
+    nix-index-database,
     ...
   }: 
   let
@@ -45,7 +49,7 @@
       salo = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-	   catppuccin.nixosModules.catppuccin
+	  catppuccin.nixosModules.catppuccin
           ./nixos/configuration.nix
         ];
       };
@@ -58,6 +62,7 @@
         modules = [
 	  catppuccin.homeManagerModules.catppuccin
 	  inputs.plasma-manager.homeManagerModules.plasma-manager
+	  nix-index-database.hmModules.nix-index 
           ./home-manager/home.nix
 	  {
 	    home = {
