@@ -15,16 +15,15 @@
     bibata-cursors
     papirus-icon-theme
     utterly-round-plasma-style
-    
-    # qbittorent
-    qbittorrent
+
+    qbittorrent # qbittorent
     vesktop # Discord
     telegram-desktop # Telegram
     wineWowPackages.stable # wine
     winetricks
     bitwarden # bitwarden
     obs-studio # obs-studio
-   
+
     flatpak
     gnufdisk
     variety
@@ -65,6 +64,7 @@
     mangohud
 
     pavucontrol # Sound manager
+    comma # instead nix-env -p
     gnumake
     gcc
     git
