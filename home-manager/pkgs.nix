@@ -65,7 +65,6 @@
     mangohud
 
     pavucontrol # Sound manager
-    comma # instead nix-env -p
     gnumake
     gcc
     git
