@@ -67,6 +67,8 @@
     gcc
     git
     unzip
+    fzf
+    ripgrep
 
     # Minecraft
     prismlauncher
