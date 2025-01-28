@@ -8,25 +8,22 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "ahci" "nvme" "usbhid" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/9e5e867f-ae77-4293-8ac6-7182ced83c06";
+    { device = "/dev/disk/by-uuid/555c94bf-9c53-4c30-8305-a1c97a931ba6";
       fsType = "ext4";
     };
+
+  boot.initrd.luks.devices."luks-bdaaa25a-a23c-4625-afa2-7bcc815f423c".device = "/dev/disk/by-uuid/bdaaa25a-a23c-4625-afa2-7bcc815f423c";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/68C3-85F0";
+    { device = "/dev/disk/by-uuid/1923-CB8F";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
-
-  fileSystems."/mnt/KINGSTON" =
-    { device = "/dev/disk/by-uuid/a5e53b33-fbca-4a31-b489-27e714b5247a";
-      fsType = "ext4";
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices = [ ];
@@ -37,7 +34,6 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp88s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.ham0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
