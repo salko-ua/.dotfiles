@@ -9,10 +9,11 @@
       opacity = 0.85;
       blur = true;
       decorations_theme_variant = "dark";
-      position.x = 480;
-      position.y = 245;
-      padding.x = 15;
-      padding.y = 15;
+      startup_mode = "Fullscreen";
+      decorations = "None";
+    };
+    font = {
+      size = 18;
     };
 
     mouse.hide_when_typing = false;
