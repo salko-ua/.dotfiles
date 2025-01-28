@@ -9,8 +9,8 @@
       opacity = 0.85;
       blur = true;
       decorations_theme_variant = "dark";
-      position.x = 1280;
-      position.y = 720;
+      position.x = 480;
+      position.y = 245;
       padding.x = 15;
       padding.y = 15;
     };
