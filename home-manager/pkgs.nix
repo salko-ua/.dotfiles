@@ -69,6 +69,7 @@
     unzip
     fzf
     ripgrep
+    lazygit
 
     # Minecraft
     prismlauncher

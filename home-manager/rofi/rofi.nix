@@ -5,9 +5,9 @@
     package = pkgs.rofi-wayland;
     extraConfig = {
       modi = "drun,ssh,run";
-      display-drun = "   Apps ";
-      display-run = "   Run ";
-      display-ssh = " 󰌘 Ssh ";
+      display-drun = "Apps ";
+      display-run = "Run ";
+      display-ssh = "Ssh ";
       drun-display-format = "{icon} {name}";
       show-icons = true;
       sidebar-mode = true;
