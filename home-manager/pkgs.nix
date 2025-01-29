@@ -9,6 +9,8 @@
     gh.enable = true;
     nix-index-database.comma.enable = true;
     btop.enable = true;
+    direnv.nix-direnv.enable = true;
+    direnv.enable = true;
   };
 
   home.packages = with pkgs; [
