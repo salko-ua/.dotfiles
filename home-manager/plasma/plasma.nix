@@ -20,6 +20,7 @@
 	theme="__aurorae__svg__Utterly-Round-Dark";
       };
       theme = "Utterly-Round";
+      colorScheme = "BreezeDark";
     };
 
     hotkeys = {
@@ -48,28 +49,19 @@
     };
 
     panels = [
-      # Windows-like panel at the bottom
       {
-        height = 50;
-	lengthMode = "fit";
-        location = "bottom";
-	alignment = "center";
-	hiding = "dodgewindows";
-	floating = true;
-	widgets = [
-          "org.kde.plasma.icontasks"
-	]; 
-      }
-      {
-	height = 40;
+      	height = 52;
 	lengthMode = "fill";
 	location = "top";
 	alignment = "center";
 	hiding = "none";
 	floating = true;	
         widgets = [
-	  "org.kde.plasma.pager"
+          "org.kde.plasma.windowlist"
           "org.kde.plasma.panelspacer" 
+	  {
+	    keyboardLayout.displayStyle = "flag";
+	  }
 	  {
             digitalClock = {
 	      date.enable = false;
@@ -89,10 +81,6 @@
 	      };
             };	
 	  }
-	  "org.kde.plasma.panelspacer"
-	  {
-	    keyboardLayout.displayStyle = "flag";
-	  }
 	  {
             systemTray.items = {
 	      shown = [
@@ -111,6 +99,17 @@
               ];
             };
           }
+	  "org.kde.plasma.panelspacer"
+	  {
+	    pager = {
+	      general = {
+		showWindowOutlines = false;
+		showApplicationIconsOnWindowOutlines = false;
+		showOnlyCurrentScreen = true;
+		navigationWrapsAround = false;
+	      };	
+	    };
+	  }
         ];
       }
     ];
