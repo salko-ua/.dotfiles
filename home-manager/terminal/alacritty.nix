@@ -11,9 +11,11 @@
       decorations_theme_variant = "dark";
       startup_mode = "Maximized";
       decorations = "None";
+      padding.x = 10;
+      padding.y = 10;
     };
     font = {
-      size = 18;
+      size = 16;
     };
 
     mouse.hide_when_typing = false;
