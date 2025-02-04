@@ -9,7 +9,7 @@
       opacity = 0.85;
       blur = true;
       decorations_theme_variant = "dark";
-      startup_mode = "Fullscreen";
+      startup_mode = "Maximized";
       decorations = "None";
     };
     font = {
