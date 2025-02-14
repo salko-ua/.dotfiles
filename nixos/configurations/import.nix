@@ -9,5 +9,6 @@
     ./grub/grub.nix
     ./users/users.nix
     ./plasma/plasma.nix
+    ./podman/podman.nix
   ];
 }
