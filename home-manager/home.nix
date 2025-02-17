@@ -23,6 +23,7 @@
     ./firefox/firefox.nix
     ./git/git.nix
     ./rofi/rofi.nix
+    ./bun/bun.nix
   ];
 
   
