@@ -24,6 +24,7 @@
     ./git/git.nix
     ./rofi/rofi.nix
     ./bun/bun.nix
+    ./vscode/vscode.nix
   ];
 
   
