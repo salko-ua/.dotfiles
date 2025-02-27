@@ -20,11 +20,13 @@
 
   services.openssh = {
     enable = true;
+    ports = [ 22 ];
     settings = {
+      PasswordAuthentication = false;
+      AllowUsers = ["salo"];
       PermitRootLogin = "no";
     };
   };
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;

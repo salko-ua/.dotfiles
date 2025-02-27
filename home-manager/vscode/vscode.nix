@@ -1,9 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ./python-dev.nix
-  ];
-
-  home-manager.users.mentos.programs.vscode = {
+  programs.vscode = {
     enable = true;
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
@@ -19,9 +15,6 @@
       bierner.markdown-emoji
       bierner.emojisense
       jnoortheen.nix-ide
-    ]) ++ (with pkgs.unstable.vscode-extensions; [
-      # Unstable
-      seatonjiang.gitmoji-vscode
     ]);
 
     # Settings
