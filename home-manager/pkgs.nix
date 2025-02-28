@@ -46,7 +46,6 @@
     yt-dlp
 
     # IDE
-    jetbrains.pycharm-professional
     mycli
     neovim
 
