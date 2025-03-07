@@ -13,6 +13,7 @@
 
   # Virtualization
   hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia.dynamicBoost.enable = true;
   
   # Enable NVIDIA 
   services.xserver.videoDrivers = ["nvidia"];

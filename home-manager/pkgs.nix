@@ -28,7 +28,7 @@
     winetricks
     bitwarden # bitwarden
     obs-studio # obs-studio
-
+    anydesk
     flatpak
     gnufdisk
     variety
