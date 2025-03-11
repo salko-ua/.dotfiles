@@ -6,7 +6,7 @@
     package = pkgs.rofi-wayland;
     theme = {
       "@theme" = "${./theme.rasi}";
-    }
+    };
     extraConfig = {
       modi = "drun,ssh,run";
       display-drun = "Apps ";
