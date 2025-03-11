@@ -1,150 +1,112 @@
-/**
- * rofi -dump-theme output (based on arthur theme).
- * Rofi version: 1.5.4
- **/
+// from https://github.com/catppuccin/rofi/blob/b636a00fd40a7899a8206195464ae8b7f0450a6d/basic/.local/share/rofi/themes/catppuccin-mocha.rasi
 * {
-    yellow:           rgba ( 232, 174, 91, 100 % );
-    red:              rgba ( 205, 92, 92, 100 % );
-    tcyan:            rgba ( 204, 176, 196, 87 % );
-    backlight:        rgba ( 204, 255, 238, 87 % );
-    lightgreen:       rgba ( 136, 204, 34, 100 % );
-    lightcyan:        rgba ( 176, 196, 222, 100 % );
-    green:            rgba ( 134, 175, 128, 100 % );
-    background-color: rgba ( 0, 0, 0, 0 % );
-    lightred:         rgba ( 204, 85, 51, 100 % );
-    font:             "JetBrainsMono Nerd Font 24";
-    tlightblack:      rgba ( 85, 68, 68, 80 % );
-    lightmagenta:     rgba ( 153, 102, 0, 100 % );
-    dark:             rgba ( 28, 28, 28, 100 % );
-    lightblack:       rgba ( 85, 68, 68, 100 % );
-    magenta:          rgba ( 222, 184, 135, 100 % );
-    black:            rgba ( 61, 53, 42, 100 % );
-    transparent:      rgba ( 0, 0, 0, 0 % );
-    lightwhite:       rgba ( 221, 204, 187, 100 % );
-    lightblue:        rgba ( 135, 206, 235, 100 % );
-    lightyellow:      rgba ( 255, 167, 93, 100 % );
-    cyan:             rgba ( 176, 196, 222, 100 % );
-    white:            rgba ( 187, 170, 153, 100 % );
-    foreground:       rgba ( 255, 238, 221, 100 % );
-    blue:             rgba ( 100, 149, 237, 100 % );
-    highlight:        bold underline rgba ( 255, 255, 255, 100 % );
+    bg-col:  #1e1e2e;
+    bg-col-light: #1e1e2e;
+    border-col: #1e1e2e;
+    selected-col: #1e1e2e;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f38ba8;
+    grey: #6c7086;
+
+    width: 600;
+    font: "JetBrainsMono Nerd Font 14";
 }
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
 window {
-    text-color:       var(magenta);
-    transparency:     "screenshot";
-    padding:          10px ;
-    children:         [ mainbox ];
-    orientation:      horizontal;
-    location:         center;
-    anchor:           center;
-    background-color: var(transparent);
-    border-radius:    10px ;
-    border:           0px ;
-    spacing:          0;
+    height: 360px;
+    border: 3px;
+    border-color: @border-col;
+    background-color: @bg-col;
 }
+
 mainbox {
-    spacing:  0;
-    children: [ inputbar,message,listview ];
+    background-color: @bg-col;
 }
-message {
-    padding:          5;
-    background-color: var(tcyan);
-    border-color:     var(foreground);
-    font:             "JetBrainsMono Nerd Font 20";
-    border:           0px 2px 2px ;
-    text-color:       var(black);
-}
+
 inputbar {
-    padding:          11px ;
-    background-color: var(tlightblack);
-    border:           2px ;
-    font:             "JetBrainsMono Nerd Font 30";
-    border-color:     var(foreground);
-    border-radius:    15px 15px 0px 0px ;
-    text-color:       var(lightgreen);
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
 }
-entry {
-    text-font:  inherit;
-    text-color: inherit;
-}
+
 prompt {
-    text-font:  inherit;
-    margin:     0px 0.3000em 0.0000em 0.0000em ;
-    text-color: inherit;
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
 }
-case-indicator {
-    text-font:  inherit;
-    text-color: inherit;
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
 }
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
 listview {
-    padding:          8px ;
-    background-color: rgba ( 28, 28, 28, 80 % );
-    dynamic:          false;
-    border-color:     var(foreground);
-    lines:            10;
-    border-radius:    0px 0px 15px 15px ;
-    border:           0px 2px 2px ;
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    lines: 5;
+    background-color: @bg-col;
 }
+
 element {
-    padding:          3px ;
-    background-color: rgba ( 0, 0, 0, 0 % );
-    vertical-align:   0.50;
-    font:             inherit;
-    border-radius:    4px ;
-    text-color:       var(foreground);
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
 }
-element selected.normal {
-    background-color: var(blue);
+
+element-icon {
+    size: 25px;
 }
-element selected.active {
-    foreground:       var(dark);
-    background-color: var(lightblue);
+
+element selected {
+    background-color:  @selected-col ;
+    text-color: @fg-col2  ;
 }
-element selected.urgent {
-    foreground:       var(dark);
-    background-color: var(lightred);
-}
-element normal.active {
-    foreground: var(lightblue);
-}
-element normal.urgent {
-    foreground: var(lightred);
-}
-element alternate.active {
-    foreground: var(lightblue);
-}
-element alternate.urgent {
-    foreground: var(lightred);
-}
-vertb {
-    expand:   false;
-    children: [ dummy0,mode-switcher,dummy1 ];
-}
-dummy0 {
-    expand: true;
-}
-dummy1 {
-    expand: true;
-}
+
 mode-switcher {
-    orientation: vertical;
-    expand:      false;
-    spacing:     0px ;
-    border:      0px ;
-}
+    spacing: 0;
+  }
+
 button {
-    text-color:       var(foreground);
-    padding:          6px ;
-    background-color: var(tlightblack);
-    border-radius:    4px 0px 0px 4px ;
-    font:             "FontAwesome 22";
-    border:           2px 0px 2px 2px ;
-    horizontal-align: 0.50;
-    border-color:     var(foreground);
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
 }
-button selected.normal {
-    background-color: var(backlight);
-    border-color:     var(foreground);
-    text-color:       var(dark);
-    border:           2px 0px 2px 2px ;
+
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
+}
+
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @blue;
+    background-color: @bg-col-light;
 }

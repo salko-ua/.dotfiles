@@ -1,9 +1,12 @@
 { pkgs, lib, ... }:
 {
+  catppucin.rofi.enable = false;
   programs.rofi = {
     enable = true;
-    plugins = with pkgs; [ rofi-calc rofi-emoji ];
     package = pkgs.rofi-wayland;
+    theme = {
+      "@theme" = "${./theme.rasi}";
+    }
     extraConfig = {
       modi = "drun,ssh,run";
       display-drun = "Apps ";
