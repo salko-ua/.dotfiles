@@ -7,6 +7,7 @@
   hardware.pulseaudio.enable = false;
    environment.plasma6.excludePackages = with pkgs.kdePackages; [
      plasma-browser-integration
+     kwallet
      konsole
      oxygen
      kwalletmanager

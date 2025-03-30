@@ -14,7 +14,8 @@
       }
     ];
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake . && home-manager switch --flake .";
+      upd = "nh os switch & nh home switch";
+      dps = "docker ps --format \"table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}\"";
     };
   };
 }
