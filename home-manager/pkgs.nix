@@ -16,6 +16,7 @@
   home.sessionPath = ["$HOME/.local/bin"];
 
   home.packages = with pkgs; [
+    vimPlugins.nvim-dbee
     # KDE THEME
     bibata-cursors
     papirus-icon-theme

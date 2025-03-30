@@ -3,11 +3,9 @@
   ...
 }:
 {    
-  virtualisation.podman = {
-    enable = true;
-    autoPrune.enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
+  virtualisation.docker = {
+      enable = true;
+      autoPrune.enable = true;
+      enableOnBoot = true;
   };
-  environment.systemPackages = [ pkgs.podman-compose ];
 }
