@@ -16,7 +16,9 @@
   home.sessionPath = ["$HOME/.local/bin"];
 
   home.packages = with pkgs; [
+    # nvim plugins
     vimPlugins.nvim-dbee
+
     # KDE THEME
     bibata-cursors
     papirus-icon-theme
@@ -49,6 +51,7 @@
     # IDE
     mycli
     neovim
+    jetbrains.pycharm-professional
 
     #kde
     filelight
