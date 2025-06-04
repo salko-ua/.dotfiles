@@ -1,5 +1,10 @@
 { pkgs, ... }: 
 {
-   virtualisation.virtualbox.host.enable = true;
-   users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+  programs.virt-manager.enable = true;
+
+  users.groups.libvirtd.members = ["salo"];
+
+  virtualisation.libvirtd.enable = true;
+
+  virtualisation.spiceUSBRedirection.enable = true;
 }

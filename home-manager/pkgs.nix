@@ -36,6 +36,7 @@
     gnufdisk
     variety
     nvtopPackages.full
+    xclip
 
     # Dev
     poetry
