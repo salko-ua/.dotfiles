@@ -37,6 +37,7 @@
     variety
     nvtopPackages.full
     xclip
+    zoom-us
 
     # Dev
     poetry
