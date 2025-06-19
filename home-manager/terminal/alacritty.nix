@@ -10,7 +10,7 @@
       blur = true;
       decorations_theme_variant = "dark";
       startup_mode = "Maximized";
-      decorations = "None";
+      decorations = "Full";
       padding.x = 10;
       padding.y = 10;
     };
