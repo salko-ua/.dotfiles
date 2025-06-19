@@ -3,7 +3,6 @@
     home-manager.enable = true;
     alacritty.enable = true;
     bash.enable = false;
-    fish.enable = true;
     java.enable = true;
     spotify-player.enable = true;
     gh.enable = true;
@@ -27,10 +26,10 @@
     qbittorrent # qbittorent
     vesktop # Discord
     telegram-desktop # Telegram
-    wineWowPackages.stable # wine
-    winetricks
-    bitwarden # bitwarden
-    obs-studio # obs-studio
+    # wineWowPackages.stable # wine
+    # winetricks
+    # bitwarden # bitwarden
+    # obs-studio # obs-studio
     anydesk
     flatpak
     gnufdisk
@@ -40,7 +39,7 @@
     zoom-us
 
     # Dev
-    poetry
+    # poetry
     python312Packages.ipython
     python3
     nodejs_22
@@ -53,7 +52,7 @@
     # IDE
     mycli
     neovim
-    jetbrains.pycharm-professional
+    # jetbrains.pycharm-professional
 
     #kde
     filelight

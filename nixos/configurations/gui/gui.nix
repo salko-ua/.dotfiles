@@ -5,8 +5,8 @@
     user = "salo";
   };
 
-  services.logmein-hamachi.enable = true;
-  services.zerotierone.enable = true;
+  # services.logmein-hamachi.enable = true;
+  # services.zerotierone.enable = true;
 
   security.polkit.enable = true;
 
