@@ -43,7 +43,7 @@
 
     panels = [
       {
-        height = 44;
+        height = 48;
         lengthMode = "fill";
         location = "bottom";
         alignment = "center";
@@ -152,20 +152,20 @@
       "kwin"."Window Operations Menu" = "Alt+F3";
       "kwin"."view_zoom_in" = ["Meta++" "Meta+=,Meta++" "Meta+=,Zoom In"];
       "kwin"."view_zoom_out" = "Meta+-";
-      "kwin"."Switch One Desktop Down" = "Meta+F";
-      "kwin"."Switch One Desktop Up" = "Meta+R";
-      "kwin"."Switch One Desktop to the Left" = "Meta+Q";
-      "kwin"."Switch One Desktop to the Right" = "Meta+E";
-      "kwin"."Switch to Desktop 1" = "Meta+1";
-      "kwin"."Switch to Desktop 2" = "Meta+2";
-      "kwin"."Switch to Desktop 3" = "Meta+3";
-      "kwin"."Switch to Desktop 4" = "Meta+4";
+      "kwin"."Switch One Desktop Down" = "Alt+F";
+      "kwin"."Switch One Desktop Up" = "Alt+R";
+      "kwin"."Switch One Desktop to the Left" = "Alt+Q";
+      "kwin"."Switch One Desktop to the Right" = "Alt+E";
+      "kwin"."Switch to Desktop 1" = "Alt+1";
+      "kwin"."Switch to Desktop 2" = "Alt+2";
+      "kwin"."Switch to Desktop 3" = "Alt+3";
+      "kwin"."Switch to Desktop 4" = "Alt+4";
       
 
-      "kwin"."Window to Desktop 1" = "Meta+Shift+1";
-      "kwin"."Window to Desktop 2" = "Meta+Shift+2";
-      "kwin"."Window to Desktop 3" = "Meta+Shift+3";
-      "kwin"."Window to Desktop 4" = "Meta+Shift+4";
+      "kwin"."Window to Desktop 1" = "Alt+Shift+1";
+      "kwin"."Window to Desktop 2" = "Alt+Shift+2";
+      "kwin"."Window to Desktop 3" = "Alt+Shift+3";
+      "kwin"."Window to Desktop 4" = "Alt+Shift+4";
 
       "kwin"."Window Quick Tile Bottom" = "Meta+Down";
       "kwin"."Window Quick Tile Bottom Left" = "none,,Quick Tile Window to the Bottom Left";
