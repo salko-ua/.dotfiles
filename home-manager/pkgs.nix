@@ -40,6 +40,7 @@
 
     # Dev
     # poetry
+    uv
     python312Packages.ipython
     python3
     nodejs_22
