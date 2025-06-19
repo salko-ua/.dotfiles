@@ -27,8 +27,6 @@
     ./vscode/vscode.nix
   ];
 
-  
-
   nixpkgs = {
     config = {
       allowUnfree = true;

@@ -23,7 +23,7 @@
     # theme
     catppuccin.url = "github:catppuccin/nix";
   };
-  outputs = inputs@ {
+  outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
@@ -31,15 +31,13 @@
     catppuccin,
     nix-index-database,
     ...
-  }: 
-  let
+  }: let
     inherit (self) outputs;
     # Supported systems for your flake packages, shell, etc.
     username = "salo";
     systems = ["x86_64-linux"];
     forAllSystems = nixpkgs.lib.genAttrs systems;
-  in 
-  {
+  in {
     #packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
@@ -49,7 +47,7 @@
       salo = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-	  catppuccin.nixosModules.catppuccin
+          catppuccin.nixosModules.catppuccin
           ./nixos/configuration.nix
         ];
       };
@@ -57,20 +55,20 @@
 
     homeConfigurations = {
       salo = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-	  catppuccin.homeManagerModules.catppuccin
-	  inputs.plasma-manager.homeManagerModules.plasma-manager
-	  nix-index-database.hmModules.nix-index 
+          catppuccin.homeModules.catppuccin
+          inputs.plasma-manager.homeManagerModules.plasma-manager
+          nix-index-database.hmModules.nix-index
           ./home-manager/home.nix
-	  {
-	    home = {
-	      inherit username;
-	      homeDirectory = "/home/${username}";
-	    };
-	  }
-	];
+          {
+            home = {
+              inherit username;
+              homeDirectory = "/home/${username}";
+            };
+          }
+        ];
       };
     };
   };

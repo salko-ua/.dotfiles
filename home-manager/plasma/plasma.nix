@@ -2,9 +2,9 @@
 {
   programs.plasma = {
     enable = true;
-    kscreenlocker.appearance.wallpaper = ./home_night.png;
-    windows.allowWindowsToRememberPositions = false;
-    workspace = {
+    #kscreenlocker.appearance.wallpaper = ./home_night.png;
+    #windows.allowWindowsToRememberPositions = false;
+    #workspace = {
       clickItemTo = "select";
       cursor = {
         theme = "Bibata-Modern-Ice";

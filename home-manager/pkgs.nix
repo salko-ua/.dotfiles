@@ -12,7 +12,7 @@
     direnv.nix-direnv.enable = true;
     direnv.enable = true;
   };
-    
+
   home.sessionPath = ["$HOME/.local/bin"];
 
   home.packages = with pkgs; [

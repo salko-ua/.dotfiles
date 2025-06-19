@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
   networking.hostName = "salo";

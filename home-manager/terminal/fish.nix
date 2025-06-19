@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   programs.fish = {
+    enable = true;
     interactiveShellInit = ''
       set fish_greeting "VERSION $version"
     '';
@@ -14,7 +15,8 @@
       }
     ];
     shellAliases = {
-      upd = "nh os switch & nh home switch";
+      osupdate = "nh os switch .";
+      nhupdate = "nh home swithc .";
       dps = "docker ps --format \"table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}\"";
     };
   };

@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-{
-  home.packages = [ pkgs.variety ];
+{pkgs, ...}: {
+  home.packages = [pkgs.variety];
 
   xdg.configFile = {
     "variety/ui.conf".source = ./ui.conf;

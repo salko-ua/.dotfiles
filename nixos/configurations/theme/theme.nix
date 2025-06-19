@@ -4,7 +4,6 @@
   catppuccin.grub.flavor = "mocha";
   catppuccin.plymouth.enable = false;
   catppuccin.plymouth.flavor = "mocha";
-  
 
   # lock screen
   # catppuccin.sddm.loginBackground.enable = true;

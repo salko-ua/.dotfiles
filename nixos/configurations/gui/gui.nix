@@ -7,9 +7,9 @@
 
   services.logmein-hamachi.enable = true;
   services.zerotierone.enable = true;
-  
+
   security.polkit.enable = true;
-  
+
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
 
@@ -20,7 +20,7 @@
 
   services.openssh = {
     enable = true;
-    ports = [ 22 ];
+    ports = [22];
     settings = {
       PasswordAuthentication = false;
       AllowUsers = ["salo"];
@@ -35,12 +35,12 @@
     jack.enable = true;
   };
 
-   fonts = {
-     packages = with pkgs; [
-       meslo-lgs-nf
-       fantasque-sans-mono
-     ];
-   };
+  fonts = {
+    packages = with pkgs; [
+      meslo-lgs-nf
+      fantasque-sans-mono
+    ];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Kyiv";
@@ -60,14 +60,14 @@
     LC_TIME = "uk_UA.UTF-8";
   };
 
-   xdg.portal = {
-     enable = true;
-     extraPortals = with pkgs; [
-       xdg-desktop-portal-gtk
-       xdg-desktop-portal-gnome
-       xdg-desktop-portal-kde
-     ];
-   };
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-kde
+    ];
+  };
 
   networking.networkmanager.enable = true;
 }

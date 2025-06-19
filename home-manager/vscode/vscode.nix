@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     enableUpdateCheck = false;
@@ -6,7 +6,7 @@
     mutableExtensionsDir = false;
 
     # Extensions
-    extensions = (with pkgs.vscode-extensions; [
+    extensions = with pkgs.vscode-extensions; [
       # Stable
       ms-vscode-remote.remote-ssh
       mhutchie.git-graph
@@ -15,7 +15,7 @@
       bierner.markdown-emoji
       bierner.emojisense
       jnoortheen.nix-ide
-    ]);
+    ];
 
     # Settings
     userSettings = {
@@ -92,17 +92,17 @@
         when = "editorTextFocus && !editorReadonly";
       }
       {
-          key = "ctrl+shift+7";
-          command = "-editor.action.commentLine";
-          when = "editorTextFocus && !editorReadonly";
+        key = "ctrl+shift+7";
+        command = "-editor.action.commentLine";
+        when = "editorTextFocus && !editorReadonly";
       }
       {
-          key = "ctrl+d";
-          command = "workbench.action.toggleSidebarVisibility";
+        key = "ctrl+d";
+        command = "workbench.action.toggleSidebarVisibility";
       }
       {
-          key = "ctrl+b";
-          command = "-workbench.action.toggleSidebarVisibility";
+        key = "ctrl+b";
+        command = "-workbench.action.toggleSidebarVisibility";
       }
     ];
   };
