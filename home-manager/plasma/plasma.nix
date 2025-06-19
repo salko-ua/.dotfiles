@@ -35,7 +35,7 @@
         };
         "rofi" = {
           name = "start rofi";
-          key = "Alt+R";
+          key = "Meta";
           command = "rofi -show drun";
         };
       };
