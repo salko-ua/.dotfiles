@@ -1,18 +1,9 @@
 {pkgs, ...}: {
-  # ENABLE AUTO LOGIN
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "salo";
-  };
+
 
   security.polkit.enable = true;
   hardware.bluetooth.enable = false;
   hardware.bluetooth.powerOnBoot = false;
-
-  services.xserver = {
-    enable = true;
-    excludePackages = [pkgs.xterm];
-  };
 
   services.openssh = {
     enable = true;

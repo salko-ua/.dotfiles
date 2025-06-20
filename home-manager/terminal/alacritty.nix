@@ -9,7 +9,6 @@
       opacity = 0.85;
       blur = true;
       decorations_theme_variant = "dark";
-      startup_mode = "Maximized";
       decorations = "Full";
       padding.x = 10;
       padding.y = 10;
