@@ -12,7 +12,7 @@
 
   environment = {
     sessionVariables = {
-      FLAKE = "/home/salo/.dotfiles";
+      NH_FLAKE = "/home/salo/.dotfiles";
     };
     systemPackages = with pkgs; [
       home-manager # Generations manager

@@ -32,7 +32,6 @@
     # obs-studio # obs-studio
     anydesk
     flatpak
-    gnufdisk
     variety
     nvtopPackages.full
     xclip
@@ -56,8 +55,11 @@
     # jetbrains.pycharm-professional
 
     #kde
-    filelight
-    kcalc
+    kdePackages.filelight
+    kdePackages.kcalc
+    kdePackages.qtwebengine
+    kdePackages.isoimagewriter
+    kdePackages.dragon
 
     # Office
     libreoffice-qt
@@ -66,9 +68,6 @@
     hunspellDicts.en_US
 
     # widgets
-    kdePackages.qtwebengine
-    kdePackages.isoimagewriter
-    dragon
     mangohud
 
     pavucontrol # Sound manager
