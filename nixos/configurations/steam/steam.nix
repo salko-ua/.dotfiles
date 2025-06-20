@@ -4,7 +4,6 @@
       extraPkgs = pkgs:
         with pkgs; [
           mangohud
-          gamemode
         ];
     };
   };

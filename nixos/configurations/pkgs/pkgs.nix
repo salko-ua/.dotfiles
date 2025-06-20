@@ -2,12 +2,6 @@
   programs = {
     partition-manager.enable = true;
     kdeconnect.enable = true;
-
-    #hyprland = {
-    #  enable = true;
-    #  xwayland.enable = true;
-    #  systemd.setPath.enable = true;
-    #};
   };
 
   environment = {

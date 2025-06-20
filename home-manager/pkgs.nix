@@ -26,13 +26,8 @@
     qbittorrent # qbittorent
     vesktop # Discord
     telegram-desktop # Telegram
-    # wineWowPackages.stable # wine
-    # winetricks
-    # bitwarden # bitwarden
-    # obs-studio # obs-studio
     anydesk
     flatpak
-    variety
     nvtopPackages.full
     xclip
     zoom-us
@@ -40,19 +35,16 @@
     # Dev
     # poetry
     uv
-    python312Packages.ipython
     python3
     nodejs_22
 
     # Tools
     lshw
-    steamguard-cli
     yt-dlp
 
     # IDE
     mycli
     neovim
-    # jetbrains.pycharm-professional
 
     #kde
     kdePackages.filelight
@@ -67,10 +59,9 @@
     hunspellDicts.uk_UA
     hunspellDicts.en_US
 
-    # widgets
+    # tools
     mangohud
-
-    pavucontrol # Sound manager
+    pavucontrol
     gnumake
     gcc
     git

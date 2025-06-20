@@ -67,7 +67,6 @@
               };
               calendar = {
                 firstDayOfWeek = "monday";
-                plugins = ["holidays"];
                 showWeekNumbers = true;
               };
               settings = {
@@ -348,18 +347,5 @@
       "plasmashell"."toggle do not disturb" = "none";
     };
 
-    #
-    # Some low-level settings:
-    #
-    configFile = {
-      "baloofilerc"."Basic Settings"."Indexing-Enabled" = false;
-      "kwinrc"."Effect-magiclamp"."AnimationDuration" = 300;
-      "kwinrc"."Effect-translucency"."ComboboxPopups" = 96;
-      "kwinrc"."Effect-translucency"."DropdownMenus" = 96;
-      "kwinrc"."Effect-translucency"."Menus" = 100;
-      "kwinrc"."Effect-translucency"."MoveResize" = 100;
-      "kwinrc"."Effect-translucency"."PopupMenus" = 100;
-      "kwinrc"."Effect-translucency"."TornOffMenus" = 100;
-    };
   };
 }

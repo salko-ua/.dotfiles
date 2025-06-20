@@ -5,12 +5,8 @@
     user = "salo";
   };
 
-  # services.logmein-hamachi.enable = true;
-  # services.zerotierone.enable = true;
-
   security.polkit.enable = true;
-
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = false;
   hardware.bluetooth.powerOnBoot = false;
 
   services.xserver = {
@@ -27,6 +23,7 @@
       PermitRootLogin = "no";
     };
   };
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -68,4 +65,12 @@
   };
 
   networking.networkmanager.enable = true;
+  networking.nameservers = [
+    "1.1.1.1"
+    "1.0.0.1"
+    "8.8.8.8"
+    "8.8.4.4"
+  ];
+  networking.networkmanager.wifi.powersave = true;
+
 }

@@ -6,8 +6,7 @@
   catppuccin.plymouth.flavor = "mocha";
 
   # lock screen
-  # catppuccin.sddm.loginBackground.enable = true;
-  catppuccin.sddm.background = ./home_night.png;
+  catppuccin.sddm.background = ./background.jpg;
   catppuccin.sddm.flavor = "mocha";
   catppuccin.sddm.fontSize = "14";
   catppuccin.sddm.loginBackground = false;
