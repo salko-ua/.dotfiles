@@ -5,7 +5,7 @@
       enableQt5Integration = true; #disable for qt6 full version
     };
     displayManager = {
-      defaultSession = "plasma";
+      defaultSession = "plasmax11";
       autoLogin = {
         enable = true;
         user = "salo";
