@@ -112,8 +112,6 @@
       recordWindow = null;
     };
     kwin = {
-      titlebarButtons.right = ["minimize" "maximize" "close"];
-      titlebarButtons.left = ["help" "keep-above-windows"];
       effects = {
         shakeCursor.enable = true;
         translucency.enable = true;
