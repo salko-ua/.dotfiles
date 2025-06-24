@@ -344,6 +344,14 @@
       "plasmashell"."switch to previous activity" = "Meta+A+Q";
       "plasmashell"."toggle do not disturb" = "none";
     };
-
-  };
+    configFile = {
+      "ksmserverrc"."General"."loginMode" = "emptySession";
+      "kwalletrc"."Wallet"."Enabled" = false;
+      "kwinrc"."Xwayland"."Scale" = 1;
+      "kxkbrc"."Layout"."DisplayNames" = ",";
+      "kxkbrc"."Layout"."LayoutList" = "us,ua";
+      "kxkbrc"."Layout"."Use" = true;
+      "kxkbrc"."Layout"."VariantList" = ",";
+      "plasma-localerc"."Formats"."LANG" = "en_US.UTF-8";
+    };
 }
