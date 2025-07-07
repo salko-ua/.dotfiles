@@ -354,4 +354,5 @@
       "kxkbrc"."Layout"."VariantList" = ",";
       "plasma-localerc"."Formats"."LANG" = "en_US.UTF-8";
     };
+  };
 }

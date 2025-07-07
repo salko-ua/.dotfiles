@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
     # nvim plugins
     vimPlugins.nvim-dbee
+    lenovo-legion
 
     # KDE THEME
     bibata-cursors
