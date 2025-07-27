@@ -13,7 +13,6 @@
         ]
       ];
       toOverwrite = {
-        filters = ["vk.com"];
         filterLists = [
           "user-filters"
           "ublock-filters"

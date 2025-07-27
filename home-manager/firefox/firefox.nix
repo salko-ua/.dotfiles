@@ -6,13 +6,7 @@
   imports = [./ublock-origin.nix];
 
   programs.firefox = {
+    profiles.default.extensions.force = true; 
     enable = true;
-    profiles = {
-      salo = {
-        settings = {
-          "browser.sessionstore.max_resumed_crashes" = -1;
-        };
-      };
-    };
   };
 }
