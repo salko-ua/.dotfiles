@@ -16,6 +16,7 @@
     systemPackages = with pkgs; [
       home-manager # Generations manager
       nh
+      cargo
     ];
   };
 }

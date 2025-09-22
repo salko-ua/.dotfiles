@@ -14,7 +14,10 @@
         size = 32;
       };
       iconTheme = "Papirus-Dark";
-      wallpaper = ./desktop_picture.jpg;
+      wallpaperSlideShow = {
+        path = ./.;
+        interval = 10;
+      };
       splashScreen = {
         theme = "None";
       };

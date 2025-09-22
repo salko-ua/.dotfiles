@@ -4,14 +4,14 @@
   security.polkit.enable = true;
   hardware.bluetooth.enable = false;
   hardware.bluetooth.powerOnBoot = false;
-
+  services.flatpak.enable = true;
   services.openssh = {
     enable = true;
     ports = [22];
     settings = {
       PasswordAuthentication = false;
-      AllowUsers = ["salo"];
-      PermitRootLogin = "no";
+      AllowUsers = ["salo" "root"];
+      PermitRootLogin = "yes";
     };
   };
 

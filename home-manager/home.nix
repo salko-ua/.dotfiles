@@ -24,6 +24,7 @@
     ./rofi/rofi.nix
     ./bun/bun.nix
     ./vscode/vscode.nix
+    ./gpg/gpg.nix
   ];
 
   nixpkgs = {

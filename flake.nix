@@ -21,7 +21,7 @@
     nur.url = "github:nix-community/NUR";
 
     # theme
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix/release-25.05";
   };
   outputs = inputs @ {
     self,
@@ -59,8 +59,8 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           catppuccin.homeModules.catppuccin
-          inputs.plasma-manager.homeManagerModules.plasma-manager
-          nix-index-database.hmModules.nix-index
+          inputs.plasma-manager.homeModules.plasma-manager
+          nix-index-database.homeModules.nix-index
           ./home-manager/home.nix
           {
             home = {
