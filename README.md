@@ -1,8 +1,6 @@
 <h1 align="center">NIXOS dotfiles</h1>
 <h3 align="center">This is my configuration for nixos, all programs, packages, graphic settings, public keys, etc. are here </h3>
 
-2010 y.o commit
-
 <p align="center">
     <a href="https://www.gov.uk/government/news/ukraine-what-you-can-do-to-help"><img src="https://badgen.net/badge/support/UKRAINE/?color=0057B8&labelColor=FFD700" alt="Support Ukraine"></a>
     <a href="https://github.com"><img src="https://img.shields.io/badge/platform-github.com-blue.svg" alt="platform: github.com"></a>
