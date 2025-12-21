@@ -16,7 +16,7 @@
       iconTheme = "Papirus-Dark";
       wallpaperSlideShow = {
         path = ./.;
-        interval = 10;
+        interval = 50;
       };
       splashScreen = {
         theme = "None";

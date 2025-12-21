@@ -11,6 +11,7 @@
     btop.enable = true;
     direnv.nix-direnv.enable = true;
     direnv.enable = true;
+    gpg.enable = true;
   };
 
   home.sessionPath = ["$HOME/.local/bin"];
@@ -19,6 +20,7 @@
     # nvim plugins
     vimPlugins.nvim-dbee
     lenovo-legion
+    nvidia-container-toolkit
 
     # KDE THEME
     bibata-cursors
