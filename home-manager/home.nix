@@ -25,6 +25,8 @@
     ./bun/bun.nix
     ./vscode/vscode.nix
     ./gpg/gpg.nix
+    ./obs/obs.nix
+    ./microphone/microphone.nix
   ];
 
   nixpkgs = {

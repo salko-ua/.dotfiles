@@ -12,7 +12,7 @@
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
   # Virtualization
-  #hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
   #hardware.nvidia.dynamicBoost.enable = true;
 
   # Enable NVIDIA
@@ -26,7 +26,7 @@
     powerManagement.enable = false;
     powerManagement.finegrained = false;
     open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
     #prime = {
     #  sync.enable = true;
     #  intelBusId = "PCI:0:2:0";

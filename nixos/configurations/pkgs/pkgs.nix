@@ -8,7 +8,7 @@
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
-
+  services.xserver.wacom.enable = true;
   environment = {
     sessionVariables = {
       NH_FLAKE = "/home/salo/.dotfiles";
@@ -17,6 +17,7 @@
       home-manager # Generations manager
       nh
       cargo
+      kdePackages.wacomtablet
     ];
   };
 }

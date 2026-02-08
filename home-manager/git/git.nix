@@ -1,13 +1,13 @@
 {
   programs.git = {
     enable = true;
-    userName = "salko-ua";
-    userEmail = "github@salko-ua.de";
     #signing = {
     #  key = "313F67D1EAB770F9";
     #  signByDefault = true;
     #};
-    extraConfig = {
+    settings = {
+      user.name = "salko-ua";
+      user.email = "github@salko-ua.de";
       init.defaultBranch = "main";
       pull.rebase = true;
       url = {
