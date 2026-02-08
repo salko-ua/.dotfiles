@@ -73,6 +73,7 @@
     fzf
     ripgrep
     lazygit
+    pulseaudio
 
     # Minecraft
     prismlauncher
