@@ -2,7 +2,7 @@
 
 
   security.polkit.enable = true;
-  hardware.bluetooth.enable = false;
+  hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
   services.flatpak.enable = true;
   services.openssh = {
