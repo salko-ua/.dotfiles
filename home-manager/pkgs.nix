@@ -28,7 +28,7 @@
     utterly-round-plasma-style
 
     qbittorrent # qbittorent
-    vesktop # Discord
+    pkgs.unstable.equibop # Discord
     telegram-desktop # Telegram
     anydesk
     flatpak

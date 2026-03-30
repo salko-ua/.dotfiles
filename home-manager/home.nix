@@ -26,19 +26,25 @@
     ./vscode/vscode.nix
     ./gpg/gpg.nix
     ./obs/obs.nix
-    ./microphone/microphone.nix
   ];
 
   nixpkgs = {
     config = {
       allowUnfree = true;
     };
+    overlays = [
+      inputs.self.overlays.additions
+      inputs.self.overlays.modifications
+      inputs.self.overlays.unstable-packages
+    ];
   };
 
   home = {
     username = "salo";
     homeDirectory = "/home/salo";
   };
+
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
