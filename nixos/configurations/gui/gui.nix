@@ -27,6 +27,13 @@
     packages = with pkgs; [
       meslo-lgs-nf
       fantasque-sans-mono
+      carlito
+      dejavu_fonts
+      ipafont
+      kochi-substitute
+      source-code-pro
+      ttf_bitstream_vera
+
     ];
   };
 
@@ -34,8 +41,6 @@
   time.timeZone = "Europe/Kyiv";
 
   # Select internationalisation properties.
-  i18n.consoleFont = "Lat2-Terminus16";
-  i18n.consoleKeyMap = "us";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "uk_UA.UTF-8";
@@ -48,15 +53,6 @@
     LC_TELEPHONE = "uk_UA.UTF-8";
     LC_TIME = "uk_UA.UTF-8";
   };
-
-  fonts.fonts = with pkgs; [
-    carlito
-    dejavu_fonts
-    ipafont
-    kochi-substitute
-    source-code-pro
-    ttf_bitstream_vera
-  ];
 
   fonts.fontconfig.defaultFonts = {
     monospace = [
