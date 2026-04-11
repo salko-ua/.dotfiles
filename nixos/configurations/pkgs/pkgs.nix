@@ -10,6 +10,7 @@
   ];
   services.xserver.wacom.enable = true;
   environment = {
+    etc."dict.conf".text = "server dict.org";
     sessionVariables = {
       NH_FLAKE = "/home/salo/.dotfiles";
     };
@@ -18,6 +19,7 @@
       nh
       cargo
       kdePackages.wacomtablet
+      dict
     ];
   };
 }
