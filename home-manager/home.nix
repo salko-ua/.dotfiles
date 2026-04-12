@@ -25,7 +25,8 @@
     ./bun/bun.nix
     ./vscode/vscode.nix
     ./gpg/gpg.nix
-    ./obs/obs.nix
+    ./obs/obs.nix 
+    ./variety/variety.nix
   ];
 
   nixpkgs = {
