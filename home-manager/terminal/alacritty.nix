@@ -6,7 +6,7 @@
         columns = 80;
         lines = 24;
       };
-      opacity = 0.50;
+      opacity = 0.85;
       blur = true;
       decorations_theme_variant = "dark";
       decorations = "Full";
