@@ -11,5 +11,6 @@
     ./plasma/plasma.nix
     ./virtualbox/virtualbox.nix
     ./japanese/japanese.nix
+    ./nix-ld/nix-ld.nix
   ];
 }
