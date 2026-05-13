@@ -44,7 +44,8 @@
     username = "salo";
     homeDirectory = "/home/salo";
   };
-
+  
+  services.arrpc.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
