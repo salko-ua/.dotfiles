@@ -43,6 +43,8 @@
     nodejs_22
 
     # Tools
+    ruff  
+    basedpyright
     lshw
     yt-dlp
 
