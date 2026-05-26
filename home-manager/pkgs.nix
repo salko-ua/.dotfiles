@@ -87,5 +87,6 @@
     # work
     openvpn
     remmina
+    unixODBCDrivers.msodbcsql17
   ];
 }
