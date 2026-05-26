@@ -86,5 +86,6 @@
     
     # work
     openvpn
+    remmina
   ];
 }
