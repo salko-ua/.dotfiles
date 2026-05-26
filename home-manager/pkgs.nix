@@ -83,5 +83,8 @@
     # Minecraft
     prismlauncher
     cloc
+    
+    # work
+    openvpn
   ];
 }
