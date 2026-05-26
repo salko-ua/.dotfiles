@@ -17,6 +17,9 @@
   home.sessionPath = ["$HOME/.local/bin"];
 
   home.packages = with pkgs; [
+    # AI
+    claude-code
+
     # nvim plugins
     vimPlugins.nvim-dbee
     lenovo-legion
