@@ -37,6 +37,21 @@
           key = "Meta";
           command = "rofi -show drun";
         };
+        "variety-previous" = {
+          name = "variety previous";
+          key="Shift+Alt+P";
+          command=toString (pkgs.writeShellScript "variety-previous.sh" "variety --resume && variety -p");
+        };
+        "variety-next" = {
+          name = "variety next";
+          key="Shift+Alt+N";
+          command=toString (pkgs.writeShellScript "variety-next.sh" "variety --resume && variety -n");
+        };
+        "variety-black" = {
+          name = "variety black";
+          key="Shift+Alt+B";
+          command=toString (pkgs.writeShellScript "variety-black.sh" "variety --pause && variety --set ~/Pictures/black.jpg");
+        };
       };
     };
 
