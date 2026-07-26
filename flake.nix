@@ -36,6 +36,7 @@
     inherit (self) outputs;
     # Supported systems for your flake packages, shell, etc.
     username = "salo";
+    autoImport = import ./lib/auto-import.nix;
     systems = ["x86_64-linux"];
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
@@ -47,10 +48,11 @@
     nixosConfigurations = {
       salo = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          catppuccin.nixosModules.catppuccin
-          ./nixos/configuration.nix
-        ];
+        modules =
+          [
+            catppuccin.nixosModules.catppuccin
+          ]
+          ++ autoImport ./nixos;
       };
     };
 
@@ -58,18 +60,19 @@
       salo = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          catppuccin.homeModules.catppuccin
-          inputs.plasma-manager.homeModules.plasma-manager
-          nix-index-database.homeModules.nix-index
-          ./home-manager/home.nix
-          {
-            home = {
-              inherit username;
-              homeDirectory = "/home/${username}";
-            };
-          }
-        ];
+        modules =
+          [
+            catppuccin.homeModules.catppuccin
+            inputs.plasma-manager.homeModules.plasma-manager
+            nix-index-database.homeModules.nix-index
+            {
+              home = {
+                inherit username;
+                homeDirectory = "/home/${username}";
+              };
+            }
+          ]
+          ++ autoImport ./home-manager;
       };
     };
   };
