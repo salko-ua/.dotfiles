@@ -5,5 +5,7 @@
     anydesk
     zoom-us
     flatpak
+    chromium
+    unstable.bitwarden-desktop
   ];
 }
