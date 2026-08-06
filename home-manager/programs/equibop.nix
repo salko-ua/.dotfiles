@@ -1,5 +1,20 @@
-{pkgs, ...}: {
-  home.packages = [pkgs.equibop];
+{pkgs, ...}: let
+  # Equibop's native tray backend (libvesktop-x64.node, dlopen'd out of
+  # app.asar) needs libstdc++.so.6. Electron's RUNPATH does not cover the
+  # dependencies of dlopen'd objects, so the load fails and Equibop falls back
+  # to the Electron Tray -- whose Linux branch only registers a `right-click`
+  # handler that Electron never emits, leaving the tray icon with no menu.
+  equibop = pkgs.symlinkJoin {
+    name = "equibop-${pkgs.equibop.version}";
+    paths = [pkgs.equibop];
+    nativeBuildInputs = [pkgs.makeWrapper];
+    postBuild = ''
+      wrapProgram $out/bin/equibop \
+        --prefix LD_LIBRARY_PATH : ${pkgs.stdenv.cc.cc.lib}/lib
+    '';
+  };
+in {
+  home.packages = [equibop];
 
   services.arrpc.enable = true;
 
@@ -14,7 +29,7 @@
     Type=Application
     Name=Equibop
     Comment=Equibop autostart script
-    Exec=${pkgs.equibop}/bin/equibop
+    Exec=${equibop}/bin/equibop
     StartupNotify=false
     Terminal=false
     Icon=equibop
