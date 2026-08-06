@@ -75,9 +75,7 @@
           "org.kde.plasma.kickoff"
           "org.kde.plasma.icontasks"
           "org.kde.plasma.panelspacer"
-          {
-            keyboardLayout.displayStyle = "flag";
-          }
+          "org.kde.plasma.kimpanel"
           {
             digitalClock = {
               date.enable = false;
@@ -155,7 +153,7 @@
       "KDE Keyboard Layout Switcher"."Switch keyboard layout to English (US)" = "Alt+Shift+E";
       "KDE Keyboard Layout Switcher"."Switch keyboard layout to Ukrainian" = "Alt+Shift+U";
       "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = "Alt+Shift+S";
-      "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = "Ctrl+Shift";
+      "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = "none";
 
       # Ohers
       "kwin"."Edit Tiles" = "Meta+T";
