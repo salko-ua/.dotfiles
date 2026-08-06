@@ -11,9 +11,4 @@ let
   ];
 in {
   networking.nameservers = nameservers;
-
-  services.dnsmasq = {
-    enable = true;
-    settings.server = nameservers;
-  };
 }
