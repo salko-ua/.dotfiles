@@ -363,7 +363,7 @@
     };
     configFile = {
       "ksmserverrc"."General"."loginMode" = "emptySession";
-      "kwalletrc"."Wallet"."Enabled" = false;
+      "kwalletrc"."Wallet"."Enabled" = true;
       "kwinrc"."Xwayland"."Scale" = 1;
       "kxkbrc"."Layout"."DisplayNames" = ",";
       "kxkbrc"."Layout"."LayoutList" = "us,ua";
