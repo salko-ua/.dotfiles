@@ -24,6 +24,5 @@ in {
     openvpn
     remmina-tls12
     unixodbcDrivers.msodbcsql17
-    actual-client
   ];
 }
