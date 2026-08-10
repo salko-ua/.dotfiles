@@ -79,14 +79,15 @@
 
     nixosConfigurations = {
       # attr key == networking.hostName (nh os switch resolves by hostname)
-      salo = mkNixos ./hosts/laptop;
+      salo-laptop = mkNixos ./hosts/laptop;
       salo-pc = mkNixos ./hosts/desktop;
     };
 
     homeConfigurations = {
       # nh home switch tries "user@hostname" first, then falls back to "user"
-      salo = mkHome ./hosts/laptop;
+      "salo@salo-laptop" = mkHome ./hosts/laptop;
       "salo@salo-pc" = mkHome ./hosts/desktop;
+      salo = mkHome ./hosts/laptop; # fallback alias
     };
   };
 }

@@ -16,7 +16,7 @@
     ];
     shellAliases = {
       osupdate = "nh os switch .";
-      nhupdate = "nh home swithc .";
+      nhupdate = "nh home switch .";
       dps = "docker ps --format \"table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}\"";
     };
   };
