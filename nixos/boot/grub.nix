@@ -16,9 +16,6 @@
     device = "nodev";
     efiSupport = true;
     useOSProber = true;
-    extraConfig = ''
-      GRUB_CMDLINE_LINUX_DEFAULT="nvidia-drm.modeset=1"
-    '';
 
     theme = lib.mkForce (let
       theme-path = "src/catppuccin-mocha-grub-theme";

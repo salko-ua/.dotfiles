@@ -39,25 +39,21 @@
     autoImport = import ./lib/auto-import.nix;
     systems = ["x86_64-linux"];
     forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
-    overlays = import ./overlays {inherit inputs;};
-
-    nixosConfigurations = {
-      salo = nixpkgs.lib.nixosSystem {
+    # A host = common config (./nixos, ./home-manager) + its dir in ./hosts.
+    mkNixos = hostDir:
+      nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules =
           [
             catppuccin.nixosModules.catppuccin
+            hostDir
           ]
           ++ autoImport ./nixos;
       };
-    };
 
-    homeConfigurations = {
-      salo = home-manager.lib.homeManagerConfiguration {
+    mkHome = hostDir:
+      home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules =
@@ -71,9 +67,26 @@
                 homeDirectory = "/home/${username}";
               };
             }
+            (hostDir + /home.nix)
           ]
           ++ autoImport ./home-manager;
       };
+  in {
+    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+
+    overlays = import ./overlays {inherit inputs;};
+
+    nixosConfigurations = {
+      # attr key == networking.hostName (nh os switch resolves by hostname)
+      salo = mkNixos ./hosts/laptop;
+      salo-pc = mkNixos ./hosts/desktop;
+    };
+
+    homeConfigurations = {
+      # nh home switch tries "user@hostname" first, then falls back to "user"
+      salo = mkHome ./hosts/laptop;
+      "salo@salo-pc" = mkHome ./hosts/desktop;
     };
   };
 }
