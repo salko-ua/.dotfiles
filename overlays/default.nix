@@ -1,5 +1,13 @@
 # This file defines overlays
-{inputs, ...}: {
+{inputs, ...}: let
+  mkUnstable = cudaSupport: final: _prev: {
+    unstable = import inputs.nixpkgs-unstable {
+      system = final.system;
+      config.allowUnfree = true;
+      config.cudaSupport = cudaSupport;
+    };
+  };
+in {
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs final.pkgs;
 
@@ -13,12 +21,9 @@
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
-  # be accessible through 'pkgs.unstable'
-  unstable-packages = final: _prev: {
-    unstable = import inputs.nixpkgs-unstable {
-      system = final.system;
-      config.allowUnfree = true;
-      config.cudaSupport = true;
-    };
-  };
+  # be accessible through 'pkgs.unstable'.
+  # Two variants: hosts pick one via the cudaSupport flag in flake.nix
+  # (laptop = nvidia/cuda, desktop = amd, no use for CUDA closures).
+  unstable-packages = mkUnstable false;
+  unstable-packages-cuda = mkUnstable true;
 }

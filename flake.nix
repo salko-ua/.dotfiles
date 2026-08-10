@@ -41,9 +41,13 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
     # A host = common config (./nixos, ./home-manager) + its dir in ./hosts.
-    mkNixos = hostDir:
+    # cudaSupport picks the pkgs.unstable overlay variant (see overlays/).
+    mkNixos = {
+      hostDir,
+      cudaSupport ? false,
+    }:
       nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs cudaSupport;};
         modules =
           [
             catppuccin.nixosModules.catppuccin
@@ -52,10 +56,13 @@
           ++ autoImport ./nixos;
       };
 
-    mkHome = hostDir:
+    mkHome = {
+      hostDir,
+      cudaSupport ? false,
+    }:
       home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
+        extraSpecialArgs = {inherit inputs outputs cudaSupport;};
         modules =
           [
             catppuccin.homeModules.catppuccin
@@ -79,15 +86,25 @@
 
     nixosConfigurations = {
       # attr key == networking.hostName (nh os switch resolves by hostname)
-      salo-laptop = mkNixos ./hosts/laptop;
-      salo-pc = mkNixos ./hosts/desktop;
+      salo-laptop = mkNixos {
+        hostDir = ./hosts/laptop;
+        cudaSupport = true; # nvidia
+      };
+      salo-pc = mkNixos {hostDir = ./hosts/desktop;};
     };
 
     homeConfigurations = {
       # nh home switch tries "user@hostname" first, then falls back to "user"
-      "salo@salo-laptop" = mkHome ./hosts/laptop;
-      "salo@salo-pc" = mkHome ./hosts/desktop;
-      salo = mkHome ./hosts/laptop; # fallback alias
+      "salo@salo-laptop" = mkHome {
+        hostDir = ./hosts/laptop;
+        cudaSupport = true; # nvidia
+      };
+      "salo@salo-pc" = mkHome {hostDir = ./hosts/desktop;};
+      # fallback alias
+      salo = mkHome {
+        hostDir = ./hosts/laptop;
+        cudaSupport = true;
+      };
     };
   };
 }
