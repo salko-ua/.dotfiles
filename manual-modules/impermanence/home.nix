@@ -34,6 +34,11 @@
       ".config/mozilla"
       ".mozilla"
 
+      # NetworkManager keeps VPN certs here, not in the system-connections file.
+      # work-vpn's ca/cert/key/tls-crypt-v2 all point into this directory, so
+      # losing it breaks the VPN even though the profile itself is persisted.
+      ".local/share/networkmanagement"
+
       # Other apps
       ".config/Bitwarden"
       ".config/easyeffects"
