@@ -364,6 +364,19 @@
     configFile = {
       "ksmserverrc"."General"."loginMode" = "emptySession";
       "kwalletrc"."Wallet"."Enabled" = true;
+      # KDE's "Virtual Keyboard" setting. nixos/desktop/japanese.nix runs fcitx5
+      # with waylandFrontend, which deliberately leaves GTK_IM_MODULE/QT_IM_MODULE
+      # unset -- the compositor's input-method protocol is then the only input
+      # path, and KWin only offers it to whatever this points at. Unset means
+      # fcitx5 comes up, loads its addons, then logs "Using Wayland native input
+      # method protocol: 0" and never receives a keystroke.
+      #
+      # The launcher is a small D-Bus client that hands KWin's input-method fd to
+      # the already-running org.fcitx.Fcitx5, so this does not start a second
+      # daemon and the existing XDG autostart stays as it is. Deliberately the
+      # /run/current-system path, not a store path: it stays valid across
+      # rebuilds and always matches the fcitx5 build systemPackages installed.
+      "kwinrc"."Wayland"."InputMethod" = "/run/current-system/sw/share/applications/fcitx5-wayland-launcher.desktop";
       "kwinrc"."Xwayland"."Scale" = 1;
       "kxkbrc"."Layout"."DisplayNames" = ",";
       "kxkbrc"."Layout"."LayoutList" = "us,ua";
