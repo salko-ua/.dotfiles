@@ -35,15 +35,20 @@ in {
   # above is guaranteed to be LD_PRELOADed regardless of PATH (the PC resolves
   # packages through /etc/profiles/per-user, the laptop through ~/.nix-profile).
   # -i starts it iconified in the tray instead of opening the main window.
-  xdg.configFile."autostart/remmina-applet.desktop".text = ''
-    [Desktop Entry]
-    Version=1.0
-    Type=Application
-    Name=Remmina Applet
-    Comment=Connect to remote desktops through the applet menu
-    Exec=${remmina-tls12}/bin/remmina -i
-    Icon=org.remmina.Remmina
-    Terminal=false
-    Hidden=false
-  '';
+  # force, because remmina writes this file itself whenever the tray setting is
+  # toggled -- an unmanaged copy would otherwise abort activation.
+  xdg.configFile."autostart/remmina-applet.desktop" = {
+    force = true;
+    text = ''
+      [Desktop Entry]
+      Version=1.0
+      Type=Application
+      Name=Remmina Applet
+      Comment=Connect to remote desktops through the applet menu
+      Exec=${remmina-tls12}/bin/remmina -i
+      Icon=org.remmina.Remmina
+      Terminal=false
+      Hidden=false
+    '';
+  };
 }

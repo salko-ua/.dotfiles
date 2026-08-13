@@ -24,14 +24,20 @@ in {
   # sandbox init then hits IMMEDIATE_CRASH() and dies with SIGILL on every boot.
   # Always Exec the wrapper; it derives the speech and Wayland flags itself from
   # NIXOS_SPEECH / NIXOS_OZONE_WL + WAYLAND_DISPLAY.
-  xdg.configFile."autostart/equibop.desktop".text = ''
-    [Desktop Entry]
-    Type=Application
-    Name=Equibop
-    Comment=Equibop autostart script
-    Exec=${equibop}/bin/equibop
-    StartupNotify=false
-    Terminal=false
-    Icon=equibop
-  '';
+  # force, because the toggle described above rewrites this file itself; without
+  # it, flipping that setting once makes the next activation abort with
+  # "would be clobbered".
+  xdg.configFile."autostart/equibop.desktop" = {
+    force = true;
+    text = ''
+      [Desktop Entry]
+      Type=Application
+      Name=Equibop
+      Comment=Equibop autostart script
+      Exec=${equibop}/bin/equibop
+      StartupNotify=false
+      Terminal=false
+      Icon=equibop
+    '';
+  };
 }

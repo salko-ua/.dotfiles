@@ -22,18 +22,21 @@
     # fetch a wallpaper, and needs a shell for the &&. The absolute variety path
     # replaces the bare `variety` it writes, which depends on the autostart
     # environment's PATH.
-    "autostart/variety.desktop".text = ''
-      [Desktop Entry]
-      Type=Application
-      Name=Variety
-      Comment=Variety Wallpaper Changer
-      Exec=${pkgs.bash}/bin/bash -c "sleep 20 && ${pkgs.variety}/bin/variety --profile ${config.xdg.configHome}/variety/"
-      Icon=variety
-      Terminal=false
-      StartupNotify=false
-      StartupWMClass=Variety
-      Categories=GNOME;GTK;Utility;
-    '';
+    "autostart/variety.desktop" = {
+      force = true; # variety writes this itself, same as the two conf files above
+      text = ''
+        [Desktop Entry]
+        Type=Application
+        Name=Variety
+        Comment=Variety Wallpaper Changer
+        Exec=${pkgs.bash}/bin/bash -c "sleep 20 && ${pkgs.variety}/bin/variety --profile ${config.xdg.configHome}/variety/"
+        Icon=variety
+        Terminal=false
+        StartupNotify=false
+        StartupWMClass=Variety
+        Categories=GNOME;GTK;Utility;
+      '';
+    };
   };
 
   home.file."Pictures/.keep".text = "Variety needs this";
