@@ -34,6 +34,14 @@
       ".config/mozilla"
       ".mozilla"
 
+      # remmina.pref holds `secret`, the key its saved connection passwords are
+      # encrypted with, so it cannot be declared in this public repo: committing
+      # it leaks the key, omitting it makes every saved password undecryptable.
+      # The .remmina profiles under .local/share carry work hostnames and
+      # credentials for the same reason. Persist both, declare neither.
+      ".config/remmina"
+      ".local/share/remmina"
+
       # NetworkManager keeps VPN certs here, not in the system-connections file.
       # work-vpn's ca/cert/key/tls-crypt-v2 all point into this directory, so
       # losing it breaks the VPN even though the profile itself is persisted.

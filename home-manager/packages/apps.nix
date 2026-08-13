@@ -3,6 +3,6 @@
     qbittorrent
     telegram-desktop
     anydesk
-    unstable.bitwarden-desktop
+    # bitwarden-desktop lives in ../programs/bitwarden.nix, with its autostart entry
   ];
 }
