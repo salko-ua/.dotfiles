@@ -140,6 +140,16 @@ in {
 
     files = [
       "/etc/machine-id"
+      # The host key systemd derives encrypted credentials from. libvirtd uses
+      # LoadCredentialEncrypted= for /var/lib/libvirt/secrets/secrets-encryption-key,
+      # so if this key changes the persisted encrypted secret stops decrypting
+      # and libvirtd fails with 243/CREDENTIALS on every boot.
+      #
+      # systemd demands mode exactly 0400 and refuses the key with EPERM
+      # otherwise (creds-util.c: `(st.st_mode & 07777) != 0400`). The rule in
+      # systemd.tmpfiles.settings below enforces that, because a hand-copied
+      # key is the one way this file shows up with the wrong mode.
+      "/var/lib/systemd/credential.secret"
       # Regenerated on boot otherwise, so every reboot would trip the clients'
       # known_hosts.
       "/etc/ssh/ssh_host_ed25519_key"
@@ -147,6 +157,18 @@ in {
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_rsa_key.pub"
     ];
+  };
+
+  # Fix the mode rather than the copy: systemd rejects the credential host key
+  # unless it is exactly 0400. Targets the /persist path so it does not depend
+  # on the bind mount being up yet. "z" only adjusts an existing file, so this
+  # is a no-op before the key has ever been created.
+  systemd.tmpfiles.settings."10-impermanence-credential-secret" = {
+    "/persist/var/lib/systemd/credential.secret".z = {
+      mode = "0400";
+      user = "root";
+      group = "root";
+    };
   };
 
   # /etc/sudoers.lecture-status lives on the wiped root, so sudo would lecture

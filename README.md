@@ -81,6 +81,12 @@ my.persistence.directories = [ "/var/lib/foo" ];
 my.persistence.directories = [ ".config/foo" ];
 ```
 
+Some tools only write their config through their own CLI, so there is nothing to
+persist *or* to declare. `my.setup-stuff.<name>.command`
+(`home-manager/system/setup-stuff.nix`) runs such a command as a systemd user
+service on every login — currently just `tide configure` for the fish prompt.
+Commands there must be idempotent.
+
 Lost something after a reboot? It is still in `/mnt/btr_pool/old_roots/` for 30
 days:
 

@@ -39,7 +39,7 @@
       ".config/easyeffects"
       ".local/share/easyeffects"
       ".config/mozc"
-      ".config/variety" 
+      ".config/variety"
       ".zoom"
 
       # Dev tooling
