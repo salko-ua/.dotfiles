@@ -5,13 +5,30 @@
 }: {
   home.packages = with pkgs; [
     bibata-cursors
-    papirus-icon-theme
+    # papirus-icon-theme is pulled in by catppuccin's gtk.iconTheme as
+    # catppuccin-papirus-folders (same theme, recoloured folders). Installing
+    # both collides in buildEnv over share/icons/Papirus.
     utterly-round-plasma-style
   ];
 
   programs.plasma = {
     enable = true;
-    kscreenlocker.appearance.wallpaper = ./desktop_picture.jpg;
+    # Only the boot-time fallback: variety overwrites this same kscreenlockerrc
+    # key on every wallpaper change (change_lock_screen in its conf), so the lock
+    # screen follows the desktop. Previously pointed at ./desktop_picture.jpg,
+    # which does not exist in this repo -- nix never checks, since the path is
+    # just interpolated into a config string, so it built fine while the greeter
+    # logged "unknown wallpaper provider type" and fell back to the default.
+    kscreenlocker.appearance.wallpaper = ../../nixos/desktop/theme/background.jpg;
+
+    # A stable path, kept pointing at variety's live wallpaper by
+    # variety-current-wallpaper.{service,path}. Plasma's own wallpaper setting
+    # lives in plasma-org.kde.plasma.desktop-appletsrc, which is not persisted, so
+    # every boot used to start on plasma's stock image until variety caught up.
+    # The symlink is under .config/variety, which IS persisted, so it already
+    # resolves to the last image at login. A string, not a nix path, so it stays a
+    # literal path instead of being copied into the store.
+    workspace.wallpaper = "/home/salo/.config/variety/current-wallpaper";
     windows.allowWindowsToRememberPositions = false;
     workspace = {
       clickItemTo = "select";
