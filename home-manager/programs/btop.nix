@@ -6,7 +6,7 @@
       vim_keys = true;
       base_10_sizes = true;
       swap_disk = false;
-      disks_filter = "/ /boot";
+      disks_filter = "/ /boot /mnt";
     };
   };
 }
