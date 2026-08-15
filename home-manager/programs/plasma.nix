@@ -5,9 +5,6 @@
 }: {
   home.packages = with pkgs; [
     bibata-cursors
-    # papirus-icon-theme is pulled in by catppuccin's gtk.iconTheme as
-    # catppuccin-papirus-folders (same theme, recoloured folders). Installing
-    # both collides in buildEnv over share/icons/Papirus.
     utterly-round-plasma-style
   ];
 
@@ -46,6 +43,23 @@
       };
       theme = "Utterly-Round";
       colorScheme = "BreezeDark";
+    };
+
+    # Transcribed from the live ~/.config/powerdevilrc. AC only -- this is a
+    # desktop. shutDown is 8, not sleep: an hour idle powers off.
+    powerdevil.AC = {
+      powerButtonAction = "shutDown";
+      autoSuspend = {
+        action = "shutDown";
+        idleTimeout = 3600; # 1h
+      };
+      turnOffDisplay = {
+        idleTimeout = 1800; # 30min
+        idleTimeoutWhenLocked = 1800;
+      };
+      # Alone this emits DimDisplayIdleTimeoutSec=-1; an idleTimeout would force
+      # DimDisplayWhenIdle back to true.
+      dimDisplay.enable = false;
     };
 
     hotkeys = {
