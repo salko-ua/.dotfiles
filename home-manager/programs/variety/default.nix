@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   config,
   ...
@@ -68,6 +69,16 @@
     Service = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash ${./current-wallpaper.sh}";
+      Environment = [
+        "WHITE_FRACTION_SCRIPT=${./white-fraction.py}"
+        # Percentage of near-white background above which a wallpaper is skipped.
+        "WHITE_FRACTION_MAX=60"
+        "PATH=${lib.makeBinPath [
+          (pkgs.python3.withPackages (ps: [ps.pillow]))
+          pkgs.variety
+          pkgs.coreutils
+        ]}"
+      ];
     };
   };
 
