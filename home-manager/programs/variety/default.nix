@@ -82,6 +82,29 @@
     };
   };
 
+  # plasma-manager's own wallpaper pass races plasmashell's startup and silently
+  # gives up (see the script's header). This one retries, so the desktop lands on
+  # variety's last wallpaper instead of plasma's stock image.
+  systemd.user.services.plasma-wallpaper-restore = {
+    Unit = {
+      Description = "Restore variety's wallpaper into plasma at login";
+      After = ["plasma-plasmashell.service" "variety-current-wallpaper.service"];
+      Wants = ["variety-current-wallpaper.service"];
+      PartOf = ["graphical-session.target"];
+    };
+
+    Install.WantedBy = ["graphical-session.target"];
+
+    Service = {
+      # Deliberately not oneshot: this watches the wallpaper for up to 40s, and a
+      # oneshot in graphical-session.target holds the whole target -- and so
+      # variety, and everything else in the session -- until it exits.
+      Type = "simple";
+      ExecStart = "${pkgs.bash}/bin/bash ${./apply-plasma-wallpaper.sh}";
+      Environment = ["PATH=${lib.makeBinPath [pkgs.kdePackages.qttools pkgs.coreutils]}"];
+    };
+  };
+
   # variety rewrites wallpaper.jpg.txt on every change, so watching that one file
   # is enough -- no polling.
   systemd.user.paths.variety-current-wallpaper = {

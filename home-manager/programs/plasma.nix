@@ -16,7 +16,12 @@
     # which does not exist in this repo -- nix never checks, since the path is
     # just interpolated into a config string, so it built fine while the greeter
     # logged "unknown wallpaper provider type" and fell back to the default.
-    kscreenlocker.appearance.wallpaper = ../../nixos/desktop/theme/background.jpg;
+    #
+    # Points at the same symlink as the desktop rather than a fixed image:
+    # kscreenlockerrc is not persisted either, so until variety's first change of
+    # the session the lock screen was showing theme/background.jpg while the
+    # desktop already showed variety's wallpaper.
+    kscreenlocker.appearance.wallpaper = "/home/salo/.config/variety/current-wallpaper";
 
     # A stable path, kept pointing at variety's live wallpaper by
     # variety-current-wallpaper.{service,path}. Plasma's own wallpaper setting
