@@ -25,13 +25,19 @@
     # nixos/desktop/portal.nix, which pins that to the KDE backend.
     gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
+
+    # ~/.gtkrc-2.0 needs the same overwrite as the files below, but it is not an
+    # xdg.configFile -- gtk2.nix keys it by the absolute gtk2.configLocation and
+    # pins force = false there, so go through the option it exposes for this.
+    gtk2.force = true;
   };
 
-  # kde-gtk-config rewrites both files at session start, so they are ordinary
+  # kde-gtk-config rewrites all four files at session start, so they are ordinary
   # files rather than home-manager symlinks and activation would otherwise abort
   # with "would be clobbered" (as the autostart entries did on the laptop).
   xdg.configFile = {
     "gtk-3.0/settings.ini".force = true;
     "gtk-4.0/settings.ini".force = true;
+    "gtk-4.0/gtk.css".force = true;
   };
 }
